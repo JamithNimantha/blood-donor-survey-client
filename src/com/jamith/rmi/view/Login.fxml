@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="265.0" prefWidth="425.0"
+            xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.jamith.rmi.controller.LoginController">
+    <children>
+        <Label layoutX="79.0" layoutY="76.0" prefHeight="26.0" prefWidth="80.0" text="Username :">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <TextField layoutX="177.0" layoutY="76.0"/>
+        <Label layoutX="79.0" layoutY="111.0" prefHeight="26.0" prefWidth="80.0" text="Password :">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <PasswordField layoutX="177.0" layoutY="111.0"/>
+        <Button fx:id="btnLogin" layoutX="187.0" layoutY="164.0" mnemonicParsing="false" onAction="#btnLoginOnAction"
+                prefHeight="29.0" prefWidth="80.0" text="Login">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Button>
+        <Label fx:id="lblRegister" layoutX="203.0" layoutY="215.0" onMouseClicked="#lblRegisterOnMouseClicked"
+               prefHeight="17.0" prefWidth="49.0" text="Register" textAlignment="CENTER" textFill="#2300d6"
+               underline="true" wrapText="true">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
