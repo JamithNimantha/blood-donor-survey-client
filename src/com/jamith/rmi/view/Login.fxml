@@ -6,7 +6,7 @@
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="265.0" prefWidth="425.0"
             xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.jamith.rmi.controller.LoginController">
     <children>
-        <Label layoutX="79.0" layoutY="76.0" prefHeight="26.0" prefWidth="80.0" text="Username :">
+        <Label layoutX="99.0" layoutY="76.0" prefHeight="26.0" prefWidth="62.0" text="Email :">
             <font>
                 <Font name="System Bold" size="12.0"/>
             </font>
@@ -24,8 +24,8 @@
                 <Font name="System Bold" size="13.0"/>
             </font>
         </Button>
-        <Label fx:id="lblRegister" layoutX="203.0" layoutY="215.0" onMouseClicked="#lblRegisterOnMouseClicked"
-               prefHeight="17.0" prefWidth="49.0" text="Register" textAlignment="CENTER" textFill="#2300d6"
+        <Label fx:id="lblRegister" layoutX="172.0" layoutY="215.0" onMouseClicked="#lblRegisterOnMouseClicked"
+               prefHeight="17.0" prefWidth="80.0" text="Start Survey" textAlignment="CENTER" textFill="#2300d6"
                underline="true" wrapText="true">
             <font>
                 <Font name="System Bold" size="12.0"/>

@@ -37,25 +37,22 @@ public class RegisterController implements Initializable {
     private TextField txtMobile;
 
     @FXML
-    private PasswordField txtPassword;
-
-    @FXML
     private Button btnRegister;
 
     private UserService userService;
 
     @FXML
     void btnRegisterOnAction(ActionEvent event) {
+
         String fullName = txtFirstName.getText();
         String mobile = txtMobile.getText();
         String email = txtEmail.getText();
-        String password = txtPassword.getText();
         UserDTO userDTO = new UserDTO();
         userDTO.setFullName(fullName);
         userDTO.setMobile(mobile);
         userDTO.setEmail(email);
-        userDTO.setPassword(password);
         try {
+            System.out.println(userDTO);
             boolean b = userService.registerUser(userDTO);
             if (b) {
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -63,8 +60,17 @@ public class RegisterController implements Initializable {
                 a.initOwner(stage);
                 a.setTitle("Registration Completed!");
                 a.setHeaderText(null);
-                a.setContentText("Registration Completed! Please Login!");
+                a.setContentText("Please Start the Survey!");
                 a.show();
+                FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/Survey.fxml"));
+                Parent parent = fxmlLoader.load();
+//                SurveyController surveyController = fxmlLoader.<SurveyController>getController();
+//                surveyController.setEmail(email);
+                Scene scene = new Scene(parent);
+                stage.setScene(scene);
+                stage.setResizable(false);
+                stage.centerOnScreen();
+                stage.show();
             } else {
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 Alert a = new Alert(Alert.AlertType.ERROR, "Error", ButtonType.OK);
@@ -94,7 +100,7 @@ public class RegisterController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        binRegistration();
+        validateRegistration();
         try {
             userService = (UserService) ServiceHandler.getInstance().getService(ServiceFactory.ServiceType.USER);
         } catch (Exception e) {
@@ -102,12 +108,11 @@ public class RegisterController implements Initializable {
         }
     }
 
-    private void binRegistration() {
+    private void validateRegistration() {
         btnRegister.disableProperty()
                 .bind(txtFirstName.textProperty().isEmpty()
                         .or(txtEmail.textProperty().isEmpty())
                         .or(txtMobile.textProperty().isEmpty())
-                        .or(txtPassword.textProperty().isEmpty())
                 );
     }
 

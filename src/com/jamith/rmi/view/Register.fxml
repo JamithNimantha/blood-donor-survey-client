@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="353.0" prefWidth="600.0"
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="297.0" prefWidth="600.0"
             xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.jamith.rmi.controller.RegisterController">
     <children>
         <Label layoutX="195.0" layoutY="42.0" prefHeight="31.0" prefWidth="194.0" text="Registration Form">
@@ -29,20 +29,14 @@
             </font>
         </Label>
         <TextField fx:id="txtMobile" layoutX="245.0" layoutY="188.0" prefHeight="25.0" prefWidth="274.0"/>
-        <Label layoutX="137.0" layoutY="222.0" prefHeight="31.0" prefWidth="96.0" text="Password :">
-            <font>
-                <Font name="System Bold" size="12.0"/>
-            </font>
-        </Label>
-        <PasswordField fx:id="txtPassword" layoutX="245.0" layoutY="227.0" prefHeight="25.0" prefWidth="274.0"/>
-        <Button fx:id="btnRegister" layoutX="440.0" layoutY="284.0" mnemonicParsing="false"
-                onAction="#btnRegisterOnAction" prefHeight="30.0" prefWidth="105.0" text="Register">
+        <Button fx:id="btnRegister" layoutX="440.0" layoutY="237.0" mnemonicParsing="false"
+                onAction="#btnRegisterOnAction" prefHeight="30.0" prefWidth="105.0" text="Start Survey">
             <font>
                 <Font name="System Bold" size="14.0"/>
             </font>
         </Button>
-        <Label fx:id="lblLogin" layoutX="245.0" layoutY="299.0" onMouseClicked="#lblLoginOnMouseClicked"
-               prefHeight="31.0" prefWidth="75.0" text="Back to Login" textFill="#3515d7" underline="true">
+        <Label fx:id="lblLogin" layoutX="245.0" layoutY="252.0" onMouseClicked="#lblLoginOnMouseClicked"
+               prefHeight="31.0" prefWidth="75.0" text="admin Login" textFill="#3515d7" underline="true">
             <font>
                 <Font name="System Bold" size="11.0"/>
             </font>

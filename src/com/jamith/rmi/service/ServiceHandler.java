@@ -13,11 +13,13 @@ public class ServiceHandler implements ServiceFactory {
     private static ServiceHandler serviceHandler;
     private ServiceFactory serviceFactory;
     private UserService userService;
+    private QuestionAnswerService questionAnswerService;
 
     private ServiceHandler() {
         try {
             serviceFactory = (ServiceFactory) Naming.lookup("rmi://localhost:6666/survey");
             userService = (UserService) serviceFactory.getService(ServiceType.USER);
+            questionAnswerService = (QuestionAnswerService) serviceFactory.getService(ServiceType.QUESTIONANSWER);
         } catch (NotBoundException e) {
             e.printStackTrace();
         } catch (MalformedURLException e) {
@@ -37,10 +39,12 @@ public class ServiceHandler implements ServiceFactory {
     }
 
     @Override
-    public Service getService(ServiceType serviceType) throws Exception {
+    public SuperService getService(ServiceType serviceType) throws Exception {
         switch (serviceType) {
             case USER:
                 return userService;
+            case QUESTIONANSWER:
+                return questionAnswerService;
             default:
                 return null;
         }

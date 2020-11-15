@@ -1,90 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.*?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="491.0" prefWidth="701.0"
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="child" prefHeight="491.0" prefWidth="778.0"
             xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.jamith.rmi.controller.SurveyController">
     <children>
-        <Label layoutX="34.0" layoutY="62.0" prefHeight="19.0" prefWidth="370.0"
-               text="1. Have you ever volunteered to donate blood before?">
-            <font>
-                <Font name="System Bold" size="13.0"/>
-            </font>
-        </Label>
-        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="59.0" prefWidth="150.0" promptText="Select One"
-                  visibleRowCount="4"/>
-        <Label layoutX="34.0" layoutY="96.0" prefHeight="19.0" prefWidth="370.0"
-               text="2. Are you willing to donate blood?">
-            <font>
-                <Font name="System Bold" size="13.0"/>
-            </font>
-        </Label>
-        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="93.0" prefWidth="150.0" promptText="Select One"
-                  visibleRowCount="4"/>
-        <Label layoutX="34.0" layoutY="130.0" prefHeight="19.0" prefWidth="370.0" text="3. What is your age category?">
-            <font>
-                <Font name="System Bold" size="13.0"/>
-            </font>
-        </Label>
-        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="127.0" prefWidth="150.0" promptText="Select One"
-                  visibleRowCount="4"/>
-        <Label layoutX="34.0" layoutY="162.0" prefHeight="19.0" prefWidth="370.0"
-               text="4. How often do you donate blood?">
-            <font>
-                <Font name="System Bold" size="13.0"/>
-            </font>
-        </Label>
-        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="159.0" prefWidth="150.0" promptText="Select One"
-                  visibleRowCount="4"/>
-        <Label layoutX="34.0" layoutY="197.0" prefHeight="19.0" prefWidth="370.0" text="5. What is your gender?">
-            <font>
-                <Font name="System Bold" size="13.0"/>
-            </font>
-        </Label>
-        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="194.0" prefWidth="150.0" promptText="Select One"
-                  visibleRowCount="4"/>
-        <Label layoutX="34.0" layoutY="229.0" prefHeight="19.0" prefWidth="370.0"
-               text="6. What is the reason to donate blood?">
-            <font>
-                <Font name="System Bold" size="13.0"/>
-            </font>
-        </Label>
-        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="226.0" prefWidth="150.0" promptText="Select One"
-                  visibleRowCount="4"/>
-        <Label layoutX="34.0" layoutY="265.0" prefHeight="19.0" prefWidth="370.0"
-               text="7. What is your feeling about donating blood?">
-            <font>
-                <Font name="System Bold" size="13.0"/>
-            </font>
-        </Label>
-        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="262.0" prefWidth="150.0" promptText="Select One"
-                  visibleRowCount="4"/>
-        <Label layoutX="34.0" layoutY="302.0" prefHeight="19.0" prefWidth="370.0"
-               text="8. Do you think that money should be paid to blood donors?">
-            <font>
-                <Font name="System Bold" size="13.0"/>
-            </font>
-        </Label>
-        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="299.0" prefWidth="150.0" promptText="Select One"
-                  visibleRowCount="4"/>
-        <Label layoutX="34.0" layoutY="339.0" prefHeight="19.0" prefWidth="370.0"
-               text="9. Do you think that token gift should be given to donors?">
-            <font>
-                <Font name="System Bold" size="13.0"/>
-            </font>
-        </Label>
-        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="336.0" prefWidth="150.0" promptText="Select One"
-                  visibleRowCount="4"/>
-        <Label layoutX="34.0" layoutY="374.0" prefHeight="19.0" prefWidth="370.0"
-               text="10. Is blood donation important?">
-            <font>
-                <Font name="System Bold" size="13.0"/>
-            </font>
-        </Label>
-        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="371.0" prefWidth="150.0" promptText="Select One"
-                  visibleRowCount="4"/>
+        <!--        <Label layoutX="34.0" layoutY="62.0" prefHeight="19.0" prefWidth="370.0" text="1. Have you ever volunteered to donate blood before?">-->
+        <!--            <font>-->
+        <!--                <Font name="System Bold" size="13.0" />-->
+        <!--            </font>-->
+        <!--        </Label>-->
+        <!--        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="59.0" prefHeight="25.0" prefWidth="250.0" promptText="Select One" visibleRowCount="7" />-->
+        <!--        <Label layoutX="34.0" layoutY="96.0" prefHeight="19.0" prefWidth="370.0"-->
+        <!--               text="2. Are you willing to donate blood?">-->
+        <!--            <font>-->
+        <!--                <Font name="System Bold" size="13.0"/>-->
+        <!--            </font>-->
+        <!--        </Label>-->
+        <!--        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="93.0" prefWidth="150.0" promptText="Select One"-->
+        <!--                  visibleRowCount="4"/>-->
+        <!--        <Label layoutX="34.0" layoutY="130.0" prefHeight="19.0" prefWidth="370.0" text="3. What is your age category?">-->
+        <!--            <font>-->
+        <!--                <Font name="System Bold" size="13.0"/>-->
+        <!--            </font>-->
+        <!--        </Label>-->
+        <!--        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="127.0" prefWidth="150.0" promptText="Select One"-->
+        <!--                  visibleRowCount="4"/>-->
+        <!--        <Label layoutX="34.0" layoutY="162.0" prefHeight="19.0" prefWidth="370.0"-->
+        <!--               text="4. How often do you donate blood?">-->
+        <!--            <font>-->
+        <!--                <Font name="System Bold" size="13.0"/>-->
+        <!--            </font>-->
+        <!--        </Label>-->
+        <!--        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="159.0" prefWidth="150.0" promptText="Select One"-->
+        <!--                  visibleRowCount="4"/>-->
+        <!--        <Label layoutX="34.0" layoutY="197.0" prefHeight="19.0" prefWidth="370.0" text="5. What is your gender?">-->
+        <!--            <font>-->
+        <!--                <Font name="System Bold" size="13.0"/>-->
+        <!--            </font>-->
+        <!--        </Label>-->
+        <!--        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="194.0" prefWidth="150.0" promptText="Select One"-->
+        <!--                  visibleRowCount="4"/>-->
+        <!--        <Label layoutX="34.0" layoutY="229.0" prefHeight="19.0" prefWidth="370.0"-->
+        <!--               text="6. What is the reason to donate blood?">-->
+        <!--            <font>-->
+        <!--                <Font name="System Bold" size="13.0"/>-->
+        <!--            </font>-->
+        <!--        </Label>-->
+        <!--        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="226.0" prefWidth="150.0" promptText="Select One"-->
+        <!--                  visibleRowCount="4"/>-->
+        <!--        <Label layoutX="34.0" layoutY="265.0" prefHeight="19.0" prefWidth="370.0"-->
+        <!--               text="7. What is your feeling about donating blood?">-->
+        <!--            <font>-->
+        <!--                <Font name="System Bold" size="13.0"/>-->
+        <!--            </font>-->
+        <!--        </Label>-->
+        <!--        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="262.0" prefWidth="150.0" promptText="Select One"-->
+        <!--                  visibleRowCount="4"/>-->
+        <!--        <Label layoutX="34.0" layoutY="302.0" prefHeight="19.0" prefWidth="370.0"-->
+        <!--               text="8. Do you think that money should be paid to blood donors?">-->
+        <!--            <font>-->
+        <!--                <Font name="System Bold" size="13.0"/>-->
+        <!--            </font>-->
+        <!--        </Label>-->
+        <!--        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="299.0" prefWidth="150.0" promptText="Select One"-->
+        <!--                  visibleRowCount="4"/>-->
+        <!--        <Label layoutX="34.0" layoutY="339.0" prefHeight="19.0" prefWidth="370.0"-->
+        <!--               text="9. Do you think that token gift should be given to donors?">-->
+        <!--            <font>-->
+        <!--                <Font name="System Bold" size="13.0"/>-->
+        <!--            </font>-->
+        <!--        </Label>-->
+        <!--        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="336.0" prefWidth="150.0" promptText="Select One"-->
+        <!--                  visibleRowCount="4"/>-->
+        <!--        <Label layoutX="34.0" layoutY="374.0" prefHeight="19.0" prefWidth="370.0"-->
+        <!--               text="10. Is blood donation important?">-->
+        <!--            <font>-->
+        <!--                <Font name="System Bold" size="13.0"/>-->
+        <!--            </font>-->
+        <!--        </Label>-->
+        <!--        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="371.0" prefWidth="150.0" promptText="Select One"-->
+        <!--                  visibleRowCount="4"/>-->
         <Button fx:id="btnSubmit" layoutX="507.0" layoutY="439.0" mnemonicParsing="false" onAction="#btnSubmitOnAction"
                 prefHeight="29.0" prefWidth="74.0" text="submit">
             <font>
