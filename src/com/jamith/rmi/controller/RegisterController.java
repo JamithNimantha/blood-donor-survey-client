@@ -52,32 +52,42 @@ public class RegisterController implements Initializable {
         userDTO.setMobile(mobile);
         userDTO.setEmail(email);
         try {
-            System.out.println(userDTO);
-            boolean b = userService.registerUser(userDTO);
-            if (b) {
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                Alert a = new Alert(Alert.AlertType.INFORMATION, "Registration Completed", ButtonType.OK);
-                a.initOwner(stage);
-                a.setTitle("Registration Completed!");
-                a.setHeaderText(null);
-                a.setContentText("Please Start the Survey!");
-                a.show();
-                FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/Survey.fxml"));
-                Parent parent = fxmlLoader.load();
-//                SurveyController surveyController = fxmlLoader.<SurveyController>getController();
-//                surveyController.setEmail(email);
-                Scene scene = new Scene(parent);
-                stage.setScene(scene);
-                stage.setResizable(false);
-                stage.centerOnScreen();
-                stage.show();
+            UserDTO dto = userService.findByEmail(email);
+            if (dto == null) {
+                boolean b = userService.registerUser(userDTO);
+                if (b) {
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    Alert a = new Alert(Alert.AlertType.INFORMATION, "Registration Completed", ButtonType.OK);
+                    a.initOwner(stage);
+                    a.setTitle("Registration Completed!");
+                    a.setHeaderText(null);
+                    a.setContentText("Please Start the Survey!");
+                    a.show();
+                    FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/Survey.fxml"));
+                    Parent parent = fxmlLoader.load();
+                    SurveyController surveyController = fxmlLoader.getController();
+                    surveyController.setEmail(email);
+                    Scene scene = new Scene(parent);
+                    stage.setScene(scene);
+                    stage.setResizable(false);
+                    stage.centerOnScreen();
+                    stage.show();
+                } else {
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    Alert a = new Alert(Alert.AlertType.ERROR, "Error", ButtonType.OK);
+                    a.initOwner(stage);
+                    a.setTitle("Error Occurred!");
+                    a.setHeaderText(null);
+                    a.setContentText("Registration Failed. Please Try Again!");
+                    a.show();
+                }
             } else {
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 Alert a = new Alert(Alert.AlertType.ERROR, "Error", ButtonType.OK);
                 a.initOwner(stage);
-                a.setTitle("Error Occurred!");
+                a.setTitle("Error!");
                 a.setHeaderText(null);
-                a.setContentText("Registration Failed. Please Try Again!");
+                a.setContentText("You have already participated !");
                 a.show();
             }
         } catch (Exception e) {

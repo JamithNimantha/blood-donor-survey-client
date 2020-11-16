@@ -1,16 +1,14 @@
 package com.jamith.rmi.service;
 
-import java.rmi.Remote;
-
 /**
  * @author Jamith Nimantha
  */
-public interface ServiceFactory extends Remote {
+public interface ServiceFactory extends SuperService {
 
-    public Service getService(ServiceType serviceType) throws Exception;
+    SuperService getService(ServiceType serviceType) throws Exception;
 
-    public enum ServiceType {
-        USER
+    enum ServiceType {
+        USER, QUESTIONANSWER, RESPONSE
     }
 
 }

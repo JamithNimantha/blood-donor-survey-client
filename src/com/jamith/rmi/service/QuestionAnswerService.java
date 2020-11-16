@@ -1,6 +1,7 @@
 package com.jamith.rmi.service;
 
 import com.jamith.rmi.dto.QuestionDTO;
+import com.jamith.rmi.dto.ResponseDTO;
 
 import java.rmi.RemoteException;
 import java.util.List;
@@ -40,5 +41,14 @@ public interface QuestionAnswerService extends SuperService {
      * @return all the question
      */
     List<QuestionDTO> getAllQuestions() throws RemoteException;
+
+    /**
+     * Save all the responses
+     *
+     * @param responseDTOS
+     * @return true if Responses saved
+     * @throws RemoteException
+     */
+    boolean saveResponse(List<ResponseDTO> responseDTOS) throws RemoteException;
 
 }
