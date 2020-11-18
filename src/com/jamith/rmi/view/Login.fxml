@@ -11,13 +11,13 @@
                 <Font name="System Bold" size="12.0"/>
             </font>
         </Label>
-        <TextField layoutX="177.0" layoutY="76.0"/>
+        <TextField fx:id="txtEmail" layoutX="177.0" layoutY="76.0"/>
         <Label layoutX="79.0" layoutY="111.0" prefHeight="26.0" prefWidth="80.0" text="Password :">
             <font>
                 <Font name="System Bold" size="12.0"/>
             </font>
         </Label>
-        <PasswordField layoutX="177.0" layoutY="111.0"/>
+        <PasswordField fx:id="txtPassword" layoutX="177.0" layoutY="111.0"/>
         <Button fx:id="btnLogin" layoutX="187.0" layoutY="164.0" mnemonicParsing="false" onAction="#btnLoginOnAction"
                 prefHeight="29.0" prefWidth="80.0" text="Login">
             <font>

@@ -112,8 +112,16 @@ public class SurveyController implements Initializable {
             try {
                 boolean response = questionAnswerService.saveResponse(responseDTOS);
                 if (response) {
-                    Alert a = new Alert(Alert.AlertType.INFORMATION, "Successful", ButtonType.OK);
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/Register.fxml"));
+                    Parent parent = fxmlLoader.load();
+                    Scene scene = new Scene(parent);
+                    stage.setScene(scene);
+                    stage.setResizable(false);
+                    stage.centerOnScreen();
+                    stage.show();
+
+                    Alert a = new Alert(Alert.AlertType.INFORMATION, "Successful", ButtonType.OK);
                     a.initOwner(stage);
                     a.setTitle("Survey Successful!");
                     a.setHeaderText(null);
@@ -128,7 +136,7 @@ public class SurveyController implements Initializable {
                     a.setContentText("Please try again!");
                     a.show();
                 }
-            } catch (RemoteException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         } else {

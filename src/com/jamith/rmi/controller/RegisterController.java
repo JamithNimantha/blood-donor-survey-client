@@ -57,12 +57,6 @@ public class RegisterController implements Initializable {
                 boolean b = userService.registerUser(userDTO);
                 if (b) {
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    Alert a = new Alert(Alert.AlertType.INFORMATION, "Registration Completed", ButtonType.OK);
-                    a.initOwner(stage);
-                    a.setTitle("Registration Completed!");
-                    a.setHeaderText(null);
-                    a.setContentText("Please Start the Survey!");
-                    a.show();
                     FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/Survey.fxml"));
                     Parent parent = fxmlLoader.load();
                     SurveyController surveyController = fxmlLoader.getController();
@@ -72,6 +66,12 @@ public class RegisterController implements Initializable {
                     stage.setResizable(false);
                     stage.centerOnScreen();
                     stage.show();
+                    Alert a = new Alert(Alert.AlertType.INFORMATION, "Registration Completed", ButtonType.OK);
+                    a.initOwner(stage);
+                    a.setTitle("Registration Completed!");
+                    a.setHeaderText(null);
+                    a.setContentText("Please Start the Survey!");
+                    a.show();
                 } else {
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Alert a = new Alert(Alert.AlertType.ERROR, "Error", ButtonType.OK);
