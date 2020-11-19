@@ -51,4 +51,13 @@ public interface QuestionAnswerService extends SuperService {
      */
     boolean saveResponse(List<ResponseDTO> responseDTOS) throws RemoteException;
 
+    /**
+     * TODO
+     *
+     * @param questionDTO Question DTO
+     * @return TODO
+     * @throws RemoteException
+     */
+    byte[] generateReport(QuestionDTO questionDTO) throws RemoteException;
+
 }

@@ -4,19 +4,19 @@ import com.jamith.rmi.dto.QuestionDTO;
 import com.jamith.rmi.service.QuestionAnswerService;
 import com.jamith.rmi.service.ServiceFactory;
 import com.jamith.rmi.service.ServiceHandler;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.rmi.RemoteException;
@@ -30,7 +30,7 @@ import java.util.ResourceBundle;
 public class AnalysisDashboardController implements Initializable {
 
     @FXML
-    private PieChart chart;
+    private ImageView imageView;
 
     @FXML
     private Button btnHome;
@@ -57,7 +57,17 @@ public class AnalysisDashboardController implements Initializable {
 
     @FXML
     void cmbOnAction(ActionEvent event) {
-
+        int selectedIndex = cmbQuestion.getSelectionModel().getSelectedIndex();
+        try {
+            byte[] bytes = questionAnswerService.generateReport(questionDTOList.get(selectedIndex));
+            imageView.setImage(new Image(new ByteArrayInputStream(bytes)));
+            imageView.setFitHeight(388);
+            imageView.setFitWidth(656);
+            imageView.setPreserveRatio(true);
+            imageView.setSmooth(true);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -70,14 +80,6 @@ public class AnalysisDashboardController implements Initializable {
             e.printStackTrace();
         }
 
-
-        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                new PieChart.Data("18-25", 13),
-                new PieChart.Data("25-35", 25),
-                new PieChart.Data("35-45", 10),
-                new PieChart.Data("Above 45", 22));
-        chart.setData(pieChartData);
-
 //        cmbQuestion.setPrefWidth(150);
 //        cmbQuestion.setStyle("-fx-font: 30px \"Serif\";");
     }
@@ -87,9 +89,9 @@ public class AnalysisDashboardController implements Initializable {
      */
     private void loadAllQuestions() {
         try {
-            List<QuestionDTO> questions = questionAnswerService.getAllQuestions();
-            for (QuestionDTO question : questions) {
-                cmbQuestion.getItems().add(String.format("%d. %s", questions.indexOf(question) + 1, question.getName()));
+            questionDTOList = questionAnswerService.getAllQuestions();
+            for (QuestionDTO question : questionDTOList) {
+                cmbQuestion.getItems().add(String.format("%d. %s", questionDTOList.indexOf(question) + 1, question.getName()));
             }
         } catch (RemoteException e) {
             e.printStackTrace();
