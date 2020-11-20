@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="645.0" prefWidth="833.0"
+            xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.jamith.rmi.controller.UserManagementController">
+   <children>
+      <Button fx:id="btnHome" layoutX="741.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnHomeOnAction"
+              prefHeight="25.0" prefWidth="66.0" text="Home">
+         <font>
+            <Font name="System Bold" size="12.0"/>
+         </font>
+      </Button>
+      <Label layoutX="264.0" layoutY="27.0" prefHeight="27.0" prefWidth="288.0" text="User Management"
+             textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="26.0"/>
+         </font>
+      </Label>
+      <TableView fx:id="tbl" layoutX="27.0" layoutY="305.0" prefHeight="317.0" prefWidth="780.0">
+         <columns>
+            <TableColumn prefWidth="46.0" text="ID"/>
+            <TableColumn prefWidth="183.0" text="Full Name"/>
+            <TableColumn prefWidth="172.0" text="Email"/>
+            <TableColumn prefWidth="140.0" text="Mobile"/>
+            <TableColumn prefWidth="89.0" text="Type"/>
+            <TableColumn prefWidth="68.0" style="-fx-alignment: center;"/>
+            <TableColumn prefWidth="81.0" style="-fx-alignment: center;"/>
+         </columns>
+      </TableView>
+      <Label layoutX="168.0" layoutY="101.0" prefHeight="31.0" prefWidth="96.0" text="Full Name :">
+         <font>
+            <Font name="System Bold" size="12.0"/>
+         </font>
+      </Label>
+      <TextField fx:id="txtName" layoutX="284.0" layoutY="104.0" prefHeight="25.0" prefWidth="331.0"/>
+      <Label layoutX="196.0" layoutY="137.0" prefHeight="31.0" prefWidth="87.0" text="Email :">
+         <font>
+            <Font name="System Bold" size="12.0"/>
+         </font>
+      </Label>
+      <TextField fx:id="txtEmail" layoutX="283.0" layoutY="140.0" prefHeight="25.0" prefWidth="331.0"/>
+      <Label layoutX="136.0" layoutY="175.0" prefHeight="31.0" prefWidth="113.0" text="Mobile Number :">
+         <font>
+            <Font name="System Bold" size="12.0"/>
+         </font>
+      </Label>
+      <TextField fx:id="txtMobile" layoutX="283.0" layoutY="178.0" prefHeight="25.0" prefWidth="331.0"/>
+      <Label layoutX="170.0" layoutY="218.0" prefHeight="31.0" prefWidth="66.0" text="Password :">
+         <font>
+            <Font name="System Bold" size="12.0"/>
+         </font>
+      </Label>
+      <Button fx:id="btnClear" layoutX="528.0" layoutY="265.0" mnemonicParsing="false" onAction="#btnClearOnAction"
+              prefHeight="25.0" prefWidth="59.0" text="Clear"/>
+      <Button fx:id="btnSave" layoutX="622.0" layoutY="265.0" mnemonicParsing="false" onAction="#btnSaveOnAction"
+              prefHeight="25.0" prefWidth="59.0" text="Save"/>
+      <PasswordField fx:id="txtPassword" layoutX="284.0" layoutY="221.0" prefHeight="25.0" prefWidth="331.0"/>
+   </children>
+</AnchorPane>

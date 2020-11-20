@@ -24,7 +24,10 @@ import java.util.ResourceBundle;
 public class MainPanelController implements Initializable {
 
     @FXML
-    private Button btnStartSurvey;
+    private Button btnUM;
+
+    @FXML
+    private Button btnQA;
 
     @FXML
     private Button btnAnalytical;
@@ -69,8 +72,8 @@ public class MainPanelController implements Initializable {
     }
 
     @FXML
-    void btnStartSurveyOnAction(ActionEvent event) throws IOException {
-        Stage stage = (Stage) btnStartSurvey.getScene().getWindow();
+    void btnUMOnAction(ActionEvent event) throws IOException {
+        Stage stage = (Stage) btnUM.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/Survey.fxml"));
         Parent parent = fxmlLoader.load();
         Scene scene = new Scene(parent);
@@ -95,5 +98,10 @@ public class MainPanelController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void btnQAOnAction(ActionEvent event) {
+
     }
 }
