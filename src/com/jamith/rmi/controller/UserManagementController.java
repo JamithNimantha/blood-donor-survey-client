@@ -100,6 +100,9 @@ public class UserManagementController implements Initializable {
                     toBeUpdate = userDTO;
                     tbl.getItems().remove(userTableDTO);
                     tbl.setDisable(true);
+                    if (!userDTO.getType().equals("ADMIN")) {
+                        txtPassword.setDisable(true);
+                    }
                 });
 
                 userTableDTO.getDeleteButton().setOnAction(event -> {
@@ -127,6 +130,8 @@ public class UserManagementController implements Initializable {
         txtName.clear();
         txtPassword.clear();
         btnSave.setText("Save");
+        txtPassword.setDisable(false);
+        toBeUpdate = null;
     }
 
     @FXML

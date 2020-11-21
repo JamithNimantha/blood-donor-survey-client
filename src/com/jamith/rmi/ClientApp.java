@@ -17,7 +17,7 @@ public class ClientApp extends Application {
 
     public void start(Stage primaryStage) throws Exception {
         notifyPreloader(new Preloader.StateChangeNotification(Preloader.StateChangeNotification.Type.BEFORE_START));
-        Parent parent = FXMLLoader.load(this.getClass().getResource("/com/jamith/rmi/view/Register.fxml"));
+        Parent parent = FXMLLoader.load(this.getClass().getResource("/com/jamith/rmi/view/UserManagement.fxml"));
 //        primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("/com/debuggerme/fiverr/articlerewriter/assets/logo.png")));
         Scene temp = new Scene(parent);
         primaryStage.setScene(temp);
