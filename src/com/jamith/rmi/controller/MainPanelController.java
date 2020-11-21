@@ -3,15 +3,12 @@ package com.jamith.rmi.controller;
 import com.jamith.rmi.service.ServiceFactory;
 import com.jamith.rmi.service.ServiceHandler;
 import com.jamith.rmi.service.UserService;
+import com.jamith.rmi.util.Notification;
+import com.jamith.rmi.util.ViewLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -40,13 +37,7 @@ public class MainPanelController implements Initializable {
     @FXML
     void btnAnalyticalOnAction(ActionEvent event) throws IOException {
         Stage stage = (Stage) btnAnalytical.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/AnalysisDashboard.fxml"));
-        Parent parent = fxmlLoader.load();
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.show();
+        ViewLoader.view(stage, this.getClass().getResource("/com/jamith/rmi/view/AnalysisDashboard.fxml"));
     }
 
     @FXML
@@ -54,33 +45,15 @@ public class MainPanelController implements Initializable {
         boolean sample = userService.logout("sample");
         if (sample) {
             Stage stage = (Stage) btnLogout.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/Login.fxml"));
-            Parent parent = fxmlLoader.load();
-            Scene scene = new Scene(parent);
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.centerOnScreen();
-            stage.show();
-
-            Alert a = new Alert(Alert.AlertType.INFORMATION, "Logout Successfully", ButtonType.OK);
-            a.initOwner(stage);
-            a.setTitle("Logout Successfully !");
-            a.setHeaderText(null);
-            a.setContentText("You have Logout Successfully!");
-            a.show();
+            ViewLoader.view(stage, this.getClass().getResource("/com/jamith/rmi/view/Login.fxml"));
+            Notification.infoNotify("Logout Successfully !", "You have Logout Successfully!", event);
         }
     }
 
     @FXML
     void btnUMOnAction(ActionEvent event) throws IOException {
         Stage stage = (Stage) btnUM.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/Survey.fxml"));
-        Parent parent = fxmlLoader.load();
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.show();
+        ViewLoader.view(stage, this.getClass().getResource("/com/jamith/rmi/view/UserManagement.fxml"));
     }
 
     /**
@@ -101,7 +74,8 @@ public class MainPanelController implements Initializable {
     }
 
     @FXML
-    void btnQAOnAction(ActionEvent event) {
-
+    void btnQAOnAction(ActionEvent event) throws IOException {
+        Stage stage = (Stage) btnQA.getScene().getWindow();
+        ViewLoader.view(stage, this.getClass().getResource("/com/jamith/rmi/view/QuestionAnswerManagement.fxml"));
     }
 }
