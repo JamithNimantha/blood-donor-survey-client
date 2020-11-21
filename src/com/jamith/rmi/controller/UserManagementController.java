@@ -92,7 +92,7 @@ public class UserManagementController implements Initializable {
                 userTableDTO.setTO(userDTO);
 
                 userTableDTO.getUpdateButton().setOnAction(event -> {
-
+                    clearFields();
                     txtName.setText(userDTO.getFullName());
                     txtEmail.setText(userDTO.getEmail());
                     txtMobile.setText(userDTO.getMobile());
@@ -106,9 +106,20 @@ public class UserManagementController implements Initializable {
                 });
 
                 userTableDTO.getDeleteButton().setOnAction(event -> {
-                    boolean action = Notification.confirmNotify("Are you Sure?", "This Action cannot be undone", event);
-                    if (action)
+                    boolean action = Notification.confirmNotify(
+                            "Are you Sure?",
+                            "This Action cannot be undone",
+                            event);
+                    if (action) {
                         tbl.getItems().remove(userTableDTO);
+                        try {
+                            userService.deleteUser(userDTO.getId());
+                            Notification.infoNotify("User Removed !", "User Removed Successfully!", event);
+                        } catch (Exception e) {
+                            Notification.errorNotify("Error !", "User Could not Removed!", event);
+                            e.printStackTrace();
+                        }
+                    }
 
                 });
 
@@ -123,15 +134,23 @@ public class UserManagementController implements Initializable {
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
+        clear();
+    }
+
+    private void clear() {
         tbl.setDisable(false);
         loadUserTable();
+        clearFields();
+        btnSave.setText("Save");
+        txtPassword.setDisable(false);
+        toBeUpdate = null;
+    }
+
+    private void clearFields() {
         txtMobile.clear();
         txtEmail.clear();
         txtName.clear();
         txtPassword.clear();
-        btnSave.setText("Save");
-        txtPassword.setDisable(false);
-        toBeUpdate = null;
     }
 
     @FXML
@@ -144,6 +163,45 @@ public class UserManagementController implements Initializable {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) throws IOException {
+        if (toBeUpdate == null) {
 
+            UserDTO userDTO = new UserDTO();
+            userDTO.setFullName(txtName.getText());
+            userDTO.setEmail(txtEmail.getText());
+            userDTO.setMobile(txtMobile.getText());
+            userDTO.setPassword(txtPassword.getText());
+
+            try {
+                boolean response = userService.createAdminUser(userDTO);
+                if (response) {
+                    Notification.infoNotify("User Created!", "New User Created Successfully!", event);
+                    clear();
+                } else {
+                    Notification.errorNotify("Error!", "User Could Not Be Created!", event);
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else {
+            toBeUpdate.setFullName(txtName.getText());
+            toBeUpdate.setEmail(txtEmail.getText());
+            toBeUpdate.setMobile(txtMobile.getText());
+            toBeUpdate.setPassword(txtPassword.getText());
+
+            try {
+                boolean response = userService.updateUser(toBeUpdate);
+                if (response) {
+                    Notification.infoNotify("User Updated!", "User Updated Successfully!", event);
+                    clear();
+                } else {
+                    Notification.errorNotify("Error!", "User Could Not Be Updated!", event);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
     }
 }
