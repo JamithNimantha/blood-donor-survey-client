@@ -1,5 +1,6 @@
 package com.jamith.rmi.service;
 
+import com.jamith.rmi.dto.AnswerDTO;
 import com.jamith.rmi.dto.QuestionDTO;
 import com.jamith.rmi.dto.ResponseDTO;
 
@@ -52,12 +53,21 @@ public interface QuestionAnswerService extends SuperService {
     boolean saveResponse(List<ResponseDTO> responseDTOS) throws RemoteException;
 
     /**
-     * TODO
+     * Generate Report with QuickChart.io API
      *
      * @param questionDTO Question DTO
-     * @return TODO
+     * @return Byte Array
      * @throws RemoteException
      */
     byte[] generateReport(QuestionDTO questionDTO) throws RemoteException;
+
+    /**
+     * Delete Answers
+     *
+     * @param answerDTOS List of AnswerDTOs to be deleted
+     * @return true if Answers deleted
+     * @throws RemoteException
+     */
+    boolean deleteAnswers(List<AnswerDTO> answerDTOS) throws RemoteException;
 
 }
