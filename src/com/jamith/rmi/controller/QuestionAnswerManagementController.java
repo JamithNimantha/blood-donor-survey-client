@@ -116,7 +116,21 @@ public class QuestionAnswerManagementController implements Initializable {
     @FXML
     void btnSaveOnAction(ActionEvent event) {
         if (toBeUpdated == null) {
-            //ToDO
+            QuestionDTO questionDTO = new QuestionDTO();
+            questionDTO.setName(txtQuestion.getText());
+            questionDTO.setAnswerDTOS(new ArrayList<>());
+            tblAnswer.getItems().forEach(answerTableDTO -> questionDTO.getAnswerDTOS().add(answerTableDTO.getAnswerDTO()));
+            try {
+                boolean isSaved = questionAnswerService.saveQuestion(questionDTO);
+                if (isSaved) {
+                    Notification.infoNotify("Questions Saved!", "Questions Saved Successfully", event);
+                    clear();
+                } else {
+                    Notification.errorNotify("Error !", "Questions Could Not Saved!", event);
+                }
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
         } else {
             QuestionDTO questionDTO = toBeUpdated.getQuestionDTO();
             questionDTO.setName(txtQuestion.getText());
