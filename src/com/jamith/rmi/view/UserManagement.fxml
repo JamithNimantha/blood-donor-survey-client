@@ -7,7 +7,7 @@
             xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.jamith.rmi.controller.UserManagementController">
    <children>
       <Button fx:id="btnHome" layoutX="741.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnHomeOnAction"
-              prefHeight="25.0" prefWidth="66.0" text="Home">
+              prefHeight="25.0" prefWidth="66.0" styleClass="button-search" stylesheets="@style.css" text="Home">
          <font>
             <Font name="System Bold" size="12.0"/>
          </font>
@@ -34,28 +34,32 @@
             <Font name="System Bold" size="12.0"/>
          </font>
       </Label>
-      <TextField fx:id="txtName" layoutX="284.0" layoutY="104.0" prefHeight="25.0" prefWidth="331.0"/>
+      <TextField fx:id="txtName" layoutX="284.0" layoutY="104.0" prefHeight="25.0" prefWidth="331.0"
+                 stylesheets="@style.css"/>
       <Label layoutX="196.0" layoutY="137.0" prefHeight="31.0" prefWidth="87.0" text="Email :">
          <font>
             <Font name="System Bold" size="12.0"/>
          </font>
       </Label>
-      <TextField fx:id="txtEmail" layoutX="283.0" layoutY="140.0" prefHeight="25.0" prefWidth="331.0"/>
+      <TextField fx:id="txtEmail" layoutX="283.0" layoutY="140.0" prefHeight="25.0" prefWidth="331.0"
+                 stylesheets="@style.css"/>
       <Label layoutX="136.0" layoutY="175.0" prefHeight="31.0" prefWidth="113.0" text="Mobile Number :">
          <font>
             <Font name="System Bold" size="12.0"/>
          </font>
       </Label>
-      <TextField fx:id="txtMobile" layoutX="283.0" layoutY="178.0" prefHeight="25.0" prefWidth="331.0"/>
+      <TextField fx:id="txtMobile" layoutX="283.0" layoutY="178.0" prefHeight="25.0" prefWidth="331.0"
+                 stylesheets="@style.css"/>
       <Label layoutX="170.0" layoutY="218.0" prefHeight="31.0" prefWidth="66.0" text="Password :">
          <font>
             <Font name="System Bold" size="12.0"/>
          </font>
       </Label>
       <Button fx:id="btnClear" layoutX="528.0" layoutY="265.0" mnemonicParsing="false" onAction="#btnClearOnAction"
-              prefHeight="25.0" prefWidth="59.0" text="Clear"/>
+              prefHeight="25.0" prefWidth="59.0" styleClass="button-clear" stylesheets="@style.css" text="Clear"/>
       <Button fx:id="btnSave" layoutX="622.0" layoutY="265.0" mnemonicParsing="false" onAction="#btnSaveOnAction"
-              prefHeight="25.0" prefWidth="59.0" text="Save"/>
-      <PasswordField fx:id="txtPassword" layoutX="284.0" layoutY="221.0" prefHeight="25.0" prefWidth="331.0"/>
+              prefHeight="25.0" prefWidth="59.0" styleClass="button-save" stylesheets="@style.css" text="Save"/>
+      <PasswordField fx:id="txtPassword" layoutX="284.0" layoutY="221.0" prefHeight="25.0" prefWidth="331.0"
+                     stylesheets="@style.css"/>
    </children>
 </AnchorPane>

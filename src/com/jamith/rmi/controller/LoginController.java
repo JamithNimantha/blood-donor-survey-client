@@ -9,10 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -44,24 +41,24 @@ public class LoginController implements Initializable {
     void btnLoginOnAction(ActionEvent event) throws IOException {
         Stage stage = (Stage) btnLogin.getScene().getWindow();
 
-//        String session = userService.login(txtEmail.getText(), txtPassword.getText());
-//        System.out.println("Generated Session : " + session);
-//        if (session != null) {
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/MainPanel.fxml"));
-        Parent parent = fxmlLoader.load();
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.show();
-//        } else {
-//            Alert a = new Alert(Alert.AlertType.WARNING, "Error", ButtonType.OK);
-//            a.initOwner(stage);
-//            a.setTitle("Invalid Login!");
-//            a.setHeaderText(null);
-//            a.setContentText("Invalid Email or Password. Please try again!");
-//            a.show();
-//        }
+        String session = userService.login(txtEmail.getText(), txtPassword.getText());
+        System.out.println("Generated Session : " + session);
+        if (session != null) {
+            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/MainPanel.fxml"));
+            Parent parent = fxmlLoader.load();
+            Scene scene = new Scene(parent);
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.show();
+        } else {
+            Alert a = new Alert(Alert.AlertType.WARNING, "Error", ButtonType.OK);
+            a.initOwner(stage);
+            a.setTitle("Invalid Login!");
+            a.setHeaderText(null);
+            a.setContentText("Invalid Email or Password. Please try again!");
+            a.show();
+        }
     }
 
     @FXML

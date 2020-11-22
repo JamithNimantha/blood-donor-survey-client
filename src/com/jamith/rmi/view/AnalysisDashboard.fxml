@@ -16,13 +16,14 @@
             </font>
         </Label>
         <Button fx:id="btnHome" layoutX="646.0" layoutY="23.0" mnemonicParsing="false" onAction="#btnHomeOnAction"
-                prefHeight="25.0" prefWidth="66.0" text="Home">
+                prefHeight="25.0" prefWidth="66.0" styleClass="button-search" stylesheets="@style.css" text="Home">
             <font>
                 <Font name="System Bold" size="12.0"/>
             </font>
         </Button>
         <ComboBox fx:id="cmbQuestion" layoutX="97.0" layoutY="71.0" onAction="#cmbOnAction" prefHeight="25.0"
-                  prefWidth="514.0" promptText="Select a Question" visibleRowCount="20"/>
+                  prefWidth="514.0" promptText="Select a Question" styleClass="text-field" stylesheets="@style.css"
+                  visibleRowCount="20"/>
         <ImageView fx:id="imageView" fitHeight="388.0" fitWidth="656.0" layoutX="40.0" layoutY="127.0"
                    pickOnBounds="true" preserveRatio="true"/>
     </children>

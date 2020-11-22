@@ -36,10 +36,12 @@ public class QuestionTableDTO {
         this.setQuestion(dto.getName());
 
         Button edit = new Button();
+        edit.setStyle("-fx-font: 22 arial white; -fx-base: #396cff;");
         edit.setGraphic(new ImageView(new Image("/com/jamith/rmi/image/icons8-pencil-15.png")));
         this.setBtnUpdate(edit);
 
         Button del = new Button();
+        del.setStyle("-fx-font: 22 arial white; -fx-base: #db2a10;");
         del.setGraphic(new ImageView(new Image("/com/jamith/rmi/image/icons8-cancel-15.png")));
         this.setBtnDelete(del);
 

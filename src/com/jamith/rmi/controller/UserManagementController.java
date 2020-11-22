@@ -67,6 +67,12 @@ public class UserManagementController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        btnSave.disableProperty().bind(
+                txtEmail.textProperty().isEmpty()
+                        .or(txtName.textProperty().isEmpty())
+                        .or(txtEmail.textProperty().isEmpty())
+                        .or(txtPassword.textProperty().isEmpty())
+        );
         try {
             userService = (UserService) ServiceHandler.getInstance().getService(ServiceFactory.ServiceType.USER);
             loadUserTable();

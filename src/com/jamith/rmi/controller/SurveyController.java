@@ -50,7 +50,7 @@ public class SurveyController implements Initializable {
     private QuestionAnswerService questionAnswerService;
 
     List<QuestionDTO> allQuestions = new ArrayList<>();
-    private List<ComboBox<String>> comboBoxList = new ArrayList<>();
+    private final List<ComboBox<String>> comboBoxList = new ArrayList<>();
     private UserService userService;
 
     void setEmail(String email) {
@@ -60,7 +60,7 @@ public class SurveyController implements Initializable {
     @FXML
     void btnHomeOnAction(ActionEvent event) throws IOException {
         Stage stage = (Stage) btnHome.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/MainPanel.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/Login.fxml"));
         Parent parent = fxmlLoader.load();
         Scene scene = new Scene(parent);
         stage.setScene(scene);

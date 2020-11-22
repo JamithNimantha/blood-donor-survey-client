@@ -17,13 +17,12 @@ public class ClientApp extends Application {
 
     public void start(Stage primaryStage) throws Exception {
         notifyPreloader(new Preloader.StateChangeNotification(Preloader.StateChangeNotification.Type.BEFORE_START));
-        Parent parent = FXMLLoader.load(this.getClass().getResource("/com/jamith/rmi/view/QuestionAnswerManagement.fxml"));
-//        primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("/com/debuggerme/fiverr/articlerewriter/assets/logo.png")));
+        Parent parent = FXMLLoader.load(this.getClass().getResource("/com/jamith/rmi/view/Login.fxml"));
         Scene temp = new Scene(parent);
         primaryStage.setScene(temp);
         primaryStage.centerOnScreen();
         primaryStage.setTitle("Survey Questioner");
-//        primaryStage.setResizable(false);
+        primaryStage.setResizable(false);
 
         primaryStage.show();
     }

@@ -8,7 +8,7 @@
             fx:controller="com.jamith.rmi.controller.QuestionAnswerManagementController">
     <children>
         <Button fx:id="btnHome" layoutX="570.0" layoutY="31.0" mnemonicParsing="false" onAction="#btnHomeOnAction"
-                prefHeight="25.0" prefWidth="66.0" text="Home">
+                prefHeight="25.0" prefWidth="66.0" styleClass="button-search" stylesheets="@style.css" text="Home">
             <font>
                 <Font name="System Bold" size="12.0"/>
             </font>
@@ -38,11 +38,12 @@
                 <Font name="System Bold" size="12.0"/>
             </font>
         </Label>
-        <TextField fx:id="txtQuestion" layoutX="96.0" layoutY="98.0" prefHeight="25.0" prefWidth="518.0"/>
-        <Button fx:id="btnClear" layoutX="499.0" layoutY="288.0" mnemonicParsing="false" onAction="#btnClearOnAction"
-                prefHeight="25.0" prefWidth="59.0" text="Clear"/>
+        <TextField fx:id="txtQuestion" layoutX="96.0" layoutY="98.0" prefHeight="25.0" prefWidth="518.0"
+                   stylesheets="@style.css"/>
+        <Button fx:id="btnClear" layoutX="489.0" layoutY="288.0" mnemonicParsing="false" onAction="#btnClearOnAction"
+                prefHeight="29.0" prefWidth="73.0" styleClass="button-clear" stylesheets="@style.css" text="Clear"/>
         <Button fx:id="btnSave" layoutX="580.0" layoutY="288.0" mnemonicParsing="false" onAction="#btnSaveOnAction"
-                prefHeight="25.0" prefWidth="59.0" text="Save"/>
+                prefHeight="29.0" prefWidth="73.0" styleClass="button-save" stylesheets="@style.css" text="Save"/>
         <Label layoutX="13.0" layoutY="169.0" prefHeight="31.0" prefWidth="96.0" text="Answers :">
             <font>
                 <Font name="System Bold" size="12.0"/>
@@ -53,10 +54,12 @@
                 <Font name="System Bold" size="12.0"/>
             </font>
         </Label>
-        <TextField fx:id="txtAnswer" layoutX="96.0" layoutY="132.0" prefHeight="25.0" prefWidth="235.0"/>
+        <TextField fx:id="txtAnswer" layoutX="96.0" layoutY="132.0" prefHeight="25.0" prefWidth="235.0"
+                   stylesheets="@style.css"/>
         <Button fx:id="btnAdd" layoutX="359.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnAddOnAction"
-                prefHeight="25.0" prefWidth="59.0" text="Add"/>
+                prefHeight="0.0" prefWidth="59.0" styleClass="button-save" stylesheets="@style.css" text="Add"/>
         <Button fx:id="btnAnswerClear" layoutX="427.0" layoutY="132.0" mnemonicParsing="false"
-                onAction="#btnAnswerClearOnAction" prefHeight="25.0" prefWidth="59.0" text="Clear"/>
+                onAction="#btnAnswerClearOnAction" prefHeight="25.0" prefWidth="59.0" styleClass="button-clear"
+                stylesheets="@style.css" text="Clear"/>
     </children>
 </AnchorPane>
