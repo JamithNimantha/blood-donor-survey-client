@@ -19,17 +19,15 @@
                 <Font name="System Bold" size="13.0"/>
             </font>
         </Button>
-        <Label id="image-label" contentDisplay="GRAPHIC_ONLY" layoutX="138.0" layoutY="82.0" minHeight="133.0"
-               prefHeight="133.0" prefWidth="134.0"
-               stylesheets="@../../../../../../../../../../CHECK/FoodDeliverySystemDINEMORE/Dinemore%20Client/src/lk/ijse/dinemore/css/login/AdminLogin.css"
-               text="Label"/>
+        <Label id="admin-image-label" contentDisplay="GRAPHIC_ONLY" layoutX="138.0" layoutY="82.0" minHeight="133.0"
+               prefHeight="133.0" prefWidth="134.0" stylesheets="@style.css" text="Label"/>
         <ImageView layoutX="157.0" layoutY="101.0">
             <image>
                 <Image url="@../image/admin.png"/>
             </image>
         </ImageView>
-        <Label fx:id="lblMeto_Department" alignment="CENTER" layoutX="16.0" layoutY="6.0" prefHeight="67.0"
-               prefWidth="369.0" text="Admin Login" textFill="#d8251c">
+        <Label alignment="CENTER" layoutX="16.0" layoutY="6.0" prefHeight="67.0" prefWidth="369.0" text="Admin Login"
+               textFill="#d8251c">
             <font>
                 <Font name="System Bold" size="32.0"/>
             </font>

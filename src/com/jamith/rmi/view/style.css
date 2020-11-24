@@ -90,6 +90,12 @@
     -fx-background-color: #be0a01;
 }
 
+#admin-image-label {
+    -fx-background-color: #009675;
+    -fx-background-radius: 200px;
+}
+
+
 .start_survey {
     -fx-background-color: #0098bd;
     -fx-border-radius: 50px;
