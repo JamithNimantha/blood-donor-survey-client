@@ -1,35 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="252.0" prefWidth="403.0"
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="501.0" prefWidth="410.0" stylesheets="@style.css"
             xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.jamith.rmi.controller.LoginController">
     <children>
-        <Label layoutX="81.0" layoutY="59.0" prefHeight="26.0" prefWidth="62.0" text="Email :">
-            <font>
-                <Font name="System Bold" size="12.0"/>
-            </font>
-        </Label>
-        <TextField fx:id="txtEmail" layoutX="159.0" layoutY="59.0" stylesheets="@style.css"/>
-        <Label layoutX="61.0" layoutY="94.0" prefHeight="26.0" prefWidth="80.0" text="Password :">
-            <font>
-                <Font name="System Bold" size="12.0"/>
-            </font>
-        </Label>
-        <PasswordField fx:id="txtPassword" layoutX="159.0" layoutY="94.0" stylesheets="@style.css"/>
-        <Button fx:id="btnLogin" layoutX="278.0" layoutY="144.0" mnemonicParsing="false" onAction="#btnLoginOnAction"
-                prefHeight="29.0" prefWidth="80.0" styleClass="button-save" stylesheets="@style.css" text="Login">
+        <TextField id="text" fx:id="txtEmail" layoutX="64.0" layoutY="244.0" prefHeight="37.0" prefWidth="272.0"
+                   promptText="Email" stylesheets="@style.css"/>
+        <PasswordField id="text" fx:id="txtPassword" layoutX="64.0" layoutY="303.0" prefHeight="37.0" prefWidth="272.0"
+                       promptText="Password" stylesheets="@style.css"/>
+        <Button fx:id="btnLogin" layoutX="65.0" layoutY="358.0" mnemonicParsing="false" onAction="#btnLoginOnAction"
+                prefHeight="45.0" prefWidth="272.0" styleClass="login_button" stylesheets="@style.css" text="Login"
+                textFill="WHITE">
             <font>
                 <Font name="System Bold" size="13.0"/>
             </font>
         </Button>
-        <Label fx:id="lblRegister" layoutX="154.0" layoutY="198.0" onMouseClicked="#lblRegisterOnMouseClicked"
-               prefHeight="17.0" prefWidth="80.0" text="Start Survey" textAlignment="CENTER" textFill="#2300d6"
-               underline="true" wrapText="true">
+        <Label id="image-label" contentDisplay="GRAPHIC_ONLY" layoutX="138.0" layoutY="82.0" minHeight="133.0"
+               prefHeight="133.0" prefWidth="134.0"
+               stylesheets="@../../../../../../../../../../CHECK/FoodDeliverySystemDINEMORE/Dinemore%20Client/src/lk/ijse/dinemore/css/login/AdminLogin.css"
+               text="Label"/>
+        <ImageView layoutX="157.0" layoutY="101.0">
+            <image>
+                <Image url="@../image/admin.png"/>
+            </image>
+        </ImageView>
+        <Label fx:id="lblMeto_Department" alignment="CENTER" layoutX="16.0" layoutY="6.0" prefHeight="67.0"
+               prefWidth="369.0" text="Admin Login" textFill="#d8251c">
             <font>
-                <Font name="System Bold" size="12.0"/>
+                <Font name="System Bold" size="32.0"/>
             </font>
         </Label>
+        <Button fx:id="btnStatSurvey" layoutX="122.0" layoutY="431.0" mnemonicParsing="false"
+                onAction="#btnStatSurveyOnAction" prefHeight="29.0" prefWidth="156.0" styleClass="start_survey"
+                stylesheets="@style.css" text="Start Survey" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Button>
     </children>
 </AnchorPane>

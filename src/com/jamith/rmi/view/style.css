@@ -1,7 +1,7 @@
-.text-field {
-    -fx-prompt-text-fill: white;
-    -fx-font-weight: bold;
-}
+/*.text-field {*/
+/*    -fx-prompt-text-fill: white;*/
+/*    -fx-font-weight: bold;*/
+/*}*/
 
 .button-save {
     -fx-background-color: #ffffff;
@@ -12,7 +12,7 @@
     -fx-border-width: 1px;
     -fx-font-family: Calibri;
     -fx-font-weight: bold;
-    -fx-font-size: 14px;
+    -fx-font-size: 16px;
 }
 
 .button-save:hover {
@@ -33,7 +33,7 @@
     -fx-border-width: 1px;
     -fx-font-family: Calibri;
     -fx-font-weight: bold;
-    -fx-font-size: 14px;
+    -fx-font-size: 16px;
 }
 
 .button-clear:hover {
@@ -54,7 +54,7 @@
     -fx-border-width: 1px;
     -fx-font-family: Calibri;
     -fx-font-weight: bold;
-    -fx-font-size: 14px;
+    -fx-font-size: 16px;
 }
 
 .button-search:hover {
@@ -64,4 +64,43 @@
     -fx-background-radius: 5px;
     -fx-border-radius: 5px;
     -fx-border-width: 1px;
+}
+
+#text {
+    -fx-background-color: transparent;
+    -fx-border-color: #D8251C;
+    -fx-border-radius: 30px;
+    -fx-background-radius: 30px;
+    -fx-font-weight: bold;
+    -fx-prompt-text-fill: #D8251C;
+}
+
+.login_button {
+    -fx-background-color: #D8251C;
+    /*-fx-background-image: linear-gradient(to bottom right, #2bcbba, #3fff00);*/
+    -fx-border-radius: 50px;
+    -fx-border-color: #D8251C;
+    -fx-background-radius: 50px;
+    -fx-font-size: 16px;
+    -fx-pref-height: 45px;
+    -fx-font-weight: bold;
+}
+
+.login_button:hover {
+    -fx-background-color: #be0a01;
+}
+
+.start_survey {
+    -fx-background-color: #0098bd;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-font-size: 16px;
+    -fx-pref-height: 45px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.start_survey:hover {
+    -fx-background-color: #0081a2;
+    -fx-text-fill: white;
 }

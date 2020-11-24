@@ -3,14 +3,14 @@ package com.jamith.rmi.controller;
 import com.jamith.rmi.service.ServiceFactory;
 import com.jamith.rmi.service.ServiceHandler;
 import com.jamith.rmi.service.UserService;
+import com.jamith.rmi.util.Notification;
+import com.jamith.rmi.util.ViewLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -26,9 +26,6 @@ public class LoginController implements Initializable {
     private Button btnLogin;
 
     @FXML
-    private Label lblRegister;
-
-    @FXML
     private TextField txtEmail;
 
     @FXML
@@ -36,43 +33,28 @@ public class LoginController implements Initializable {
 
     private UserService userService;
 
+    @FXML
+    private Button btnStatSurvey;
+
+
+    @FXML
+    void btnStatSurveyOnAction(ActionEvent event) throws IOException {
+        Stage stage = (Stage) btnStatSurvey.getScene().getWindow();
+        ViewLoader.view(stage, this.getClass().getResource("/com/jamith/rmi/view/Register.fxml"));
+    }
 
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException {
         Stage stage = (Stage) btnLogin.getScene().getWindow();
-
         String session = userService.login(txtEmail.getText(), txtPassword.getText());
         System.out.println("Generated Session : " + session);
         if (session != null) {
-            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/MainPanel.fxml"));
-            Parent parent = fxmlLoader.load();
-            Scene scene = new Scene(parent);
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.centerOnScreen();
-            stage.show();
+            ViewLoader.view(stage, this.getClass().getResource("/com/jamith/rmi/view/MainPanel.fxml"));
         } else {
-            Alert a = new Alert(Alert.AlertType.WARNING, "Error", ButtonType.OK);
-            a.initOwner(stage);
-            a.setTitle("Invalid Login!");
-            a.setHeaderText(null);
-            a.setContentText("Invalid Email or Password. Please try again!");
-            a.show();
+            Notification.errorNotify("Invalid Login!", "Invalid Email or Password. Please try again!", event);
         }
     }
 
-    @FXML
-    void lblRegisterOnMouseClicked(MouseEvent event) throws IOException {
-        Stage stage = (Stage) lblRegister.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/Register.fxml"));
-        Parent parent = fxmlLoader.load();
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.show();
-
-    }
 
 
     /**
