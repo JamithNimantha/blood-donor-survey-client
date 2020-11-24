@@ -82,15 +82,15 @@
         <!--        </Label>-->
         <!--        <ComboBox fx:id="cmd" layoutX="502.0" layoutY="371.0" prefWidth="150.0" promptText="Select One"-->
         <!--                  visibleRowCount="4"/>-->
-        <Button fx:id="btnSubmit" layoutX="477.0" layoutY="437.0" mnemonicParsing="false" onAction="#btnSubmitOnAction"
+        <Button fx:id="btnSubmit" layoutX="644.0" layoutY="437.0" mnemonicParsing="false" onAction="#btnSubmitOnAction"
                 prefHeight="29.0" prefWidth="96.0" styleClass="button-save" stylesheets="@style.css" text="Submit">
             <font>
                 <Font name="System Bold" size="13.0"/>
             </font>
         </Button>
-        <Button cancelButton="true" layoutX="601.0" layoutY="436.0" mnemonicParsing="false" onAction="#btnHomeOnAction"
-                prefHeight="29.0" prefWidth="105.0" styleClass="button-search" stylesheets="@style.css"
-                text="Back to Login">
+        <Button fx:id="btnHome" cancelButton="true" layoutX="518.0" layoutY="437.0" mnemonicParsing="false"
+                onAction="#btnHomeOnAction" prefHeight="29.0" prefWidth="105.0" styleClass="button-clear"
+                stylesheets="@style.css" text="Back to Login">
             <font>
                 <Font name="System Bold" size="12.0"/>
             </font>
