@@ -1,7 +1,7 @@
-/*.text-field {*/
-/*    -fx-prompt-text-fill: white;*/
-/*    -fx-font-weight: bold;*/
-/*}*/
+.text-field {
+    -fx-prompt-text-fill: white;
+    -fx-font-weight: bold;
+}
 
 .button-save {
     -fx-background-color: #ffffff;

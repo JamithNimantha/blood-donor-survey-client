@@ -78,6 +78,7 @@ public class MainPanelController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         try {
             userService = (UserService) ServiceHandler.getInstance().getService(ServiceFactory.ServiceType.USER);
+            boolean dsf = userService.logout("dsf");
         } catch (Exception e) {
             e.printStackTrace();
         }

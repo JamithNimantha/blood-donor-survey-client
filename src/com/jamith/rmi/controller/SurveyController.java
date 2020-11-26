@@ -164,6 +164,7 @@ public class SurveyController implements Initializable {
             comboBox.setVisibleRowCount(7);
             comboBox.setPrefHeight(25.0);
             comboBox.setPrefWidth(250.0);
+            comboBox.setStyle("-fx-font-weight: bold;");
             comboBox.setPromptText("Select One");
             for (AnswerDTO answerDTO : question.getAnswerDTOS()) {
                 comboBox.getItems().add(String.valueOf(answerDTO.getName()));

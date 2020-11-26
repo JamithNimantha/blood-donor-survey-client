@@ -19,41 +19,41 @@
             <TableColumn prefWidth="172.0" text="Email"/>
             <TableColumn prefWidth="140.0" text="Mobile"/>
             <TableColumn prefWidth="89.0" text="Type"/>
-            <TableColumn prefWidth="68.0" style="-fx-alignment: center;"/>
-            <TableColumn prefWidth="81.0" style="-fx-alignment: center;"/>
+            <TableColumn prefWidth="73.0" style="-fx-alignment: center;"/>
+            <TableColumn prefWidth="76.0" style="-fx-alignment: center;"/>
          </columns>
       </TableView>
-      <Label layoutX="168.0" layoutY="101.0" prefHeight="31.0" prefWidth="96.0" text="Full Name :">
+      <Label layoutX="118.0" layoutY="101.0" prefHeight="31.0" prefWidth="96.0" text="Full Name :">
          <font>
             <Font name="System Bold" size="12.0"/>
          </font>
       </Label>
-      <TextField fx:id="txtName" layoutX="284.0" layoutY="104.0" prefHeight="25.0" prefWidth="331.0"
+      <TextField fx:id="txtName" layoutX="234.0" layoutY="104.0" prefHeight="25.0" prefWidth="485.0"
                  stylesheets="@style.css"/>
-      <Label layoutX="196.0" layoutY="137.0" prefHeight="31.0" prefWidth="87.0" text="Email :">
+      <Label layoutX="146.0" layoutY="137.0" prefHeight="31.0" prefWidth="87.0" text="Email :">
          <font>
             <Font name="System Bold" size="12.0"/>
          </font>
       </Label>
-      <TextField fx:id="txtEmail" layoutX="283.0" layoutY="140.0" prefHeight="25.0" prefWidth="331.0"
+      <TextField fx:id="txtEmail" layoutX="233.0" layoutY="140.0" prefHeight="25.0" prefWidth="485.0"
                  stylesheets="@style.css"/>
-      <Label layoutX="136.0" layoutY="175.0" prefHeight="31.0" prefWidth="113.0" text="Mobile Number :">
+      <Label layoutX="86.0" layoutY="175.0" prefHeight="31.0" prefWidth="113.0" text="Mobile Number :">
          <font>
             <Font name="System Bold" size="12.0"/>
          </font>
       </Label>
-      <TextField fx:id="txtMobile" layoutX="283.0" layoutY="178.0" prefHeight="25.0" prefWidth="331.0"
+      <TextField fx:id="txtMobile" layoutX="233.0" layoutY="178.0" prefHeight="25.0" prefWidth="485.0"
                  stylesheets="@style.css"/>
-      <Label layoutX="170.0" layoutY="218.0" prefHeight="31.0" prefWidth="66.0" text="Password :">
+      <Label layoutX="120.0" layoutY="218.0" prefHeight="31.0" prefWidth="66.0" text="Password :">
          <font>
             <Font name="System Bold" size="12.0"/>
          </font>
       </Label>
-      <Button fx:id="btnClear" layoutX="528.0" layoutY="265.0" mnemonicParsing="false" onAction="#btnClearOnAction"
-              prefHeight="25.0" prefWidth="59.0" styleClass="button-clear" stylesheets="@style.css" text="Clear"/>
-      <Button fx:id="btnSave" layoutX="622.0" layoutY="265.0" mnemonicParsing="false" onAction="#btnSaveOnAction"
-              prefHeight="25.0" prefWidth="59.0" styleClass="button-save" stylesheets="@style.css" text="Save"/>
-      <PasswordField fx:id="txtPassword" layoutX="284.0" layoutY="221.0" prefHeight="25.0" prefWidth="331.0"
+      <Button fx:id="btnClear" layoutX="525.0" layoutY="258.0" mnemonicParsing="false" onAction="#btnClearOnAction"
+              prefHeight="32.0" prefWidth="106.0" styleClass="button-clear" stylesheets="@style.css" text="Clear"/>
+      <Button fx:id="btnSave" layoutX="674.0" layoutY="258.0" mnemonicParsing="false" onAction="#btnSaveOnAction"
+              prefHeight="32.0" prefWidth="106.0" styleClass="button-save" stylesheets="@style.css" text="Save"/>
+      <PasswordField fx:id="txtPassword" layoutX="234.0" layoutY="221.0" prefHeight="25.0" prefWidth="485.0"
                      stylesheets="@style.css"/>
    </children>
 </AnchorPane>

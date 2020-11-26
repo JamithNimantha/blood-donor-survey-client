@@ -27,7 +27,7 @@
                         </ImageView>
                     </graphic>
                     <VBox.margin>
-                        <Insets top="30.0"/>
+                        <Insets top="20.0"/>
                     </VBox.margin>
                     <padding>
                         <Insets right="20.0"/>
@@ -98,7 +98,7 @@
                         </ImageView>
                     </graphic>
                     <VBox.margin>
-                        <Insets top="55.0"/>
+                        <Insets top="300.0"/>
                     </VBox.margin>
                     <padding>
                         <Insets right="20.0"/>
@@ -108,6 +108,11 @@
         </VBox>
         <AnchorPane fx:id="pane" layoutX="215.0" layoutY="-1.0" prefHeight="645.0" prefWidth="834.0"
                     style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="215.0"
-                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label layoutX="39.0" layoutY="27.0" prefHeight="217.0" prefWidth="329.0"
+                       style="-fx-background-color: #45aaf2;"/>
+            </children>
+        </AnchorPane>
     </children>
 </AnchorPane>
