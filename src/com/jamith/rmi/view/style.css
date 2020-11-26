@@ -110,3 +110,26 @@
     -fx-background-color: #0081a2;
     -fx-text-fill: white;
 }
+
+#side-vbox {
+    -fx-background-color: #448089;
+}
+
+#side-menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-font-family: Calibri;
+    -fx-graphic-text-gap: 30px;
+}
+
+#side-menu-button:hover {
+    -fx-background-color: rgba(136, 136, 136, 0.5);
+    -fx-text-fill: #ffb326;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-font-family: Calibri;
+    -fx-cursor: hand;
+    -fx-border-width: 2px;
+}

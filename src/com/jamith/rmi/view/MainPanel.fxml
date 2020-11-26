@@ -1,37 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="345.0" prefWidth="552.0"
-            xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.jamith.rmi.controller.MainPanelController">
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="645.0" prefWidth="1054.0"
+            style="-fx-background-color: brown;" xmlns="http://javafx.com/javafx/8.0.171"
+            fx:controller="com.jamith.rmi.controller.MainPanelController">
     <children>
-        <Button fx:id="btnUM" layoutX="137.0" layoutY="100.0" mnemonicParsing="false" onAction="#btnUMOnAction"
-                prefHeight="48.0" prefWidth="255.0" styleClass="button-search" stylesheets="@style.css"
-                text="User Management">
-            <font>
-                <Font name="System Bold" size="22.0"/>
-            </font>
-        </Button>
-        <Button fx:id="btnAnalytical" layoutX="137.0" layoutY="166.0" mnemonicParsing="false"
-                onAction="#btnAnalyticalOnAction" prefHeight="48.0" prefWidth="255.0" styleClass="button-clear"
-                stylesheets="@style.css" text="Analytical Dashboard">
-            <font>
-                <Font name="System Bold" size="22.0"/>
-            </font>
-        </Button>
-        <Button fx:id="btnLogout" layoutX="457.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnLogoutOnAction"
-                prefHeight="25.0" prefWidth="66.0" styleClass="button-clear" stylesheets="@style.css" text="Logout">
-            <font>
-                <Font name="System Bold" size="12.0"/>
-            </font>
-        </Button>
-        <Button fx:id="btnQA" layoutX="137.0" layoutY="232.0" mnemonicParsing="false" onAction="#btnQAOnAction"
-                prefHeight="48.0" prefWidth="255.0" styleClass="button-save" stylesheets="@style.css"
-                text="Q&amp;A Management">
-            <font>
-                <Font name="System Bold" size="22.0"/>
-            </font>
-        </Button>
+        <VBox id="side-vbox" layoutX="-2.0" layoutY="-3.0" prefHeight="645.0" prefWidth="217.0" stylesheets="@style.css"
+              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="839.0"
+              AnchorPane.topAnchor="0.0">
+            <children>
+                <Button id="side-menu-button" fx:id="btnHome" alignment="CENTER_RIGHT" contentDisplay="RIGHT"
+                        mnemonicParsing="false" onAction="#btnHomeOnAction" prefHeight="48.0" prefWidth="226.0"
+                        stylesheets="@style.css" text="Home">
+                    <font>
+                        <Font name="System Bold" size="22.0"/>
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true">
+                            <image>
+                                <Image url="@../image/icons8_Home_52px.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <VBox.margin>
+                        <Insets top="30.0"/>
+                    </VBox.margin>
+                    <padding>
+                        <Insets right="20.0"/>
+                    </padding>
+                </Button>
+                <Button id="side-menu-button" fx:id="btnAnalytical" alignment="CENTER_RIGHT" contentDisplay="RIGHT"
+                        mnemonicParsing="false" onAction="#btnAnalyticalOnAction" prefHeight="48.0" prefWidth="255.0"
+                        stylesheets="@style.css" text="Analytical Reports">
+                    <font>
+                        <Font name="System Bold" size="22.0"/>
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/icons8_Page_Properties_Report_50px.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets right="20.0"/>
+                    </padding>
+                </Button>
+                <Button id="side-menu-button" fx:id="btnQA" alignment="CENTER_RIGHT" contentDisplay="RIGHT"
+                        mnemonicParsing="false" onAction="#btnQAOnAction" prefHeight="48.0" prefWidth="255.0"
+                        stylesheets="@style.css" text="Q&amp;A Management">
+                    <font>
+                        <Font name="System Bold" size="22.0"/>
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/icons8_Chef_Hat_48px.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets right="20.0"/>
+                    </padding>
+                </Button>
+                <Button id="side-menu-button" fx:id="btnUM" alignment="CENTER_RIGHT" contentDisplay="RIGHT"
+                        mnemonicParsing="false" onAction="#btnUMOnAction" prefHeight="48.0" prefWidth="255.0"
+                        stylesheets="@style.css" text="User Management">
+                    <font>
+                        <Font name="System Bold" size="22.0"/>
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/icons8_Settings_48px.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets right="20.0"/>
+                    </padding>
+                </Button>
+                <Button id="side-menu-button" fx:id="btnLogout" alignment="CENTER_RIGHT" contentDisplay="RIGHT"
+                        mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="41.0" prefWidth="216.0"
+                        stylesheets="@style.css" text="Logout">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/icons8_Shutdown_52px.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <VBox.margin>
+                        <Insets top="55.0"/>
+                    </VBox.margin>
+                    <padding>
+                        <Insets right="20.0"/>
+                    </padding>
+                </Button>
+            </children>
+        </VBox>
+        <AnchorPane fx:id="pane" layoutX="215.0" layoutY="-1.0" prefHeight="645.0" prefWidth="834.0"
+                    style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="215.0"
+                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
     </children>
 </AnchorPane>

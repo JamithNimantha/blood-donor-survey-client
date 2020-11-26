@@ -61,8 +61,8 @@ public class AnalysisDashboardController implements Initializable {
         try {
             byte[] bytes = questionAnswerService.generateReport(questionDTOList.get(selectedIndex));
             imageView.setImage(new Image(new ByteArrayInputStream(bytes)));
-            imageView.setFitHeight(388);
-            imageView.setFitWidth(656);
+            imageView.setFitHeight(487);
+            imageView.setFitWidth(757);
             imageView.setPreserveRatio(true);
             imageView.setSmooth(true);
         } catch (RemoteException e) {

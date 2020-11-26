@@ -8,14 +8,15 @@ import com.jamith.rmi.service.QuestionAnswerService;
 import com.jamith.rmi.service.ServiceFactory;
 import com.jamith.rmi.service.ServiceHandler;
 import com.jamith.rmi.service.UserService;
+import com.jamith.rmi.util.Notification;
+import com.jamith.rmi.util.ViewLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
@@ -60,13 +61,7 @@ public class SurveyController implements Initializable {
     @FXML
     void btnHomeOnAction(ActionEvent event) throws IOException {
         Stage stage = (Stage) btnHome.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/Login.fxml"));
-        Parent parent = fxmlLoader.load();
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.show();
+        ViewLoader.view(stage, this.getClass().getResource("/com/jamith/rmi/view/Login.fxml"));
     }
 
     @FXML
@@ -80,16 +75,9 @@ public class SurveyController implements Initializable {
             e.printStackTrace();
         }
         for (ComboBox<String> comboBox : comboBoxList) {
-
             if (comboBox.getSelectionModel().getSelectedItem() == null) {
                 System.out.println("There are some unanswered questions");
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                Alert a = new Alert(Alert.AlertType.ERROR, "Error", ButtonType.OK);
-                a.initOwner(stage);
-                a.setTitle("Error!");
-                a.setHeaderText(null);
-                a.setContentText("Please Answer All The Questions!");
-                a.show();
+                Notification.errorNotify("Error!", "Please Answer All The Questions!", event);
                 break;
             } else {
                 AnswerDTO answerDto = getAnswerDTOByQuestionIdAndAnswerName(
@@ -112,29 +100,13 @@ public class SurveyController implements Initializable {
             try {
                 boolean response = questionAnswerService.saveResponse(responseDTOS);
                 if (response) {
-                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/Register.fxml"));
-                    Parent parent = fxmlLoader.load();
-                    Scene scene = new Scene(parent);
-                    stage.setScene(scene);
-                    stage.setResizable(false);
-                    stage.centerOnScreen();
-                    stage.show();
 
-                    Alert a = new Alert(Alert.AlertType.INFORMATION, "Successful", ButtonType.OK);
-                    a.initOwner(stage);
-                    a.setTitle("Survey Successful!");
-                    a.setHeaderText(null);
-                    a.setContentText("Thank you for participating in our survey!");
-                    a.show();
-                } else {
-                    Alert a = new Alert(Alert.AlertType.INFORMATION, "Error", ButtonType.OK);
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    a.initOwner(stage);
-                    a.setTitle("Error Occurred!");
-                    a.setHeaderText(null);
-                    a.setContentText("Please try again!");
-                    a.show();
+                    ViewLoader.view(stage, this.getClass().getResource("/com/jamith/rmi/view/Register.fxml"));
+
+                    Notification.infoNotify("Survey Successful!", "Thank you for participating in our survey!", event);
+                } else {
+                    Notification.errorNotify("Error Occurred!", "Please try again!", event);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -142,7 +114,6 @@ public class SurveyController implements Initializable {
         } else {
             System.err.println("All Questions are not being answered");
         }
-
 
     }
 

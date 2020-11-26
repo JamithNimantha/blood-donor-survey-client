@@ -4,6 +4,8 @@ import com.jamith.rmi.dto.UserDTO;
 import com.jamith.rmi.service.ServiceFactory;
 import com.jamith.rmi.service.ServiceHandler;
 import com.jamith.rmi.service.UserService;
+import com.jamith.rmi.util.Notification;
+import com.jamith.rmi.util.ViewLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +13,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -55,8 +59,8 @@ public class RegisterController implements Initializable {
             UserDTO dto = userService.findByEmail(email);
             if (dto == null) {
                 boolean b = userService.registerUser(userDTO);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 if (b) {
-                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/Survey.fxml"));
                     Parent parent = fxmlLoader.load();
                     SurveyController surveyController = fxmlLoader.getController();
@@ -66,29 +70,13 @@ public class RegisterController implements Initializable {
                     stage.setResizable(false);
                     stage.centerOnScreen();
                     stage.show();
-                    Alert a = new Alert(Alert.AlertType.INFORMATION, "Registration Completed", ButtonType.OK);
-                    a.initOwner(stage);
-                    a.setTitle("Registration Completed!");
-                    a.setHeaderText(null);
-                    a.setContentText("Please Start the Survey!");
-                    a.show();
+
+                    Notification.infoNotify("Registration Completed!", "Please Start the Survey!", event);
                 } else {
-                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    Alert a = new Alert(Alert.AlertType.ERROR, "Error", ButtonType.OK);
-                    a.initOwner(stage);
-                    a.setTitle("Error Occurred!");
-                    a.setHeaderText(null);
-                    a.setContentText("Registration Failed. Please Try Again!");
-                    a.show();
+                    Notification.errorNotify("Error Occurred!", "Registration Failed. Please Try Again!", event);
                 }
             } else {
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                Alert a = new Alert(Alert.AlertType.ERROR, "Error", ButtonType.OK);
-                a.initOwner(stage);
-                a.setTitle("Error!");
-                a.setHeaderText(null);
-                a.setContentText("You have already participated !");
-                a.show();
+                Notification.errorNotify("Error!", "You have already participated !", event);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -98,13 +86,7 @@ public class RegisterController implements Initializable {
     @FXML
     void lblLoginOnMouseClicked(MouseEvent event) throws IOException {
         Stage stage = (Stage) lblLogin.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/Login.fxml"));
-        Parent parent = fxmlLoader.load();
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.show();
+        ViewLoader.view(stage, this.getClass().getResource("/com/jamith/rmi/view/Login.fxml"));
 
     }
 

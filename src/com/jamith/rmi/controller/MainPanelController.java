@@ -7,8 +7,10 @@ import com.jamith.rmi.util.Notification;
 import com.jamith.rmi.util.ViewLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,6 +26,9 @@ public class MainPanelController implements Initializable {
     private Button btnUM;
 
     @FXML
+    private AnchorPane pane;
+
+    @FXML
     private Button btnQA;
 
     @FXML
@@ -35,9 +40,14 @@ public class MainPanelController implements Initializable {
     private UserService userService;
 
     @FXML
+    private Button btnHome;
+
+    private AnchorPane paneLoader;
+
+    @FXML
     void btnAnalyticalOnAction(ActionEvent event) throws IOException {
-        Stage stage = (Stage) btnAnalytical.getScene().getWindow();
-        ViewLoader.view(stage, this.getClass().getResource("/com/jamith/rmi/view/AnalysisDashboard.fxml"));
+        paneLoader = FXMLLoader.load(this.getClass().getResource("/com/jamith/rmi/view/AnalysisDashboard.fxml"));
+        pane.getChildren().setAll(paneLoader);
     }
 
     @FXML
@@ -52,8 +62,8 @@ public class MainPanelController implements Initializable {
 
     @FXML
     void btnUMOnAction(ActionEvent event) throws IOException {
-        Stage stage = (Stage) btnUM.getScene().getWindow();
-        ViewLoader.view(stage, this.getClass().getResource("/com/jamith/rmi/view/UserManagement.fxml"));
+        paneLoader = FXMLLoader.load(this.getClass().getResource("/com/jamith/rmi/view/UserManagement.fxml"));
+        pane.getChildren().setAll(paneLoader);
     }
 
     /**
@@ -75,7 +85,12 @@ public class MainPanelController implements Initializable {
 
     @FXML
     void btnQAOnAction(ActionEvent event) throws IOException {
-        Stage stage = (Stage) btnQA.getScene().getWindow();
-        ViewLoader.view(stage, this.getClass().getResource("/com/jamith/rmi/view/QuestionAnswerManagement.fxml"));
+        paneLoader = FXMLLoader.load(this.getClass().getResource("/com/jamith/rmi/view/QuestionAnswerManagement.fxml"));
+        pane.getChildren().setAll(paneLoader);
+    }
+
+    @FXML
+    void btnHomeOnAction(ActionEvent event) {
+
     }
 }
