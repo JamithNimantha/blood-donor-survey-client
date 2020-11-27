@@ -17,7 +17,7 @@ public class ClientApp extends Application {
 
     public void start(Stage primaryStage) throws Exception {
         notifyPreloader(new Preloader.StateChangeNotification(Preloader.StateChangeNotification.Type.BEFORE_START));
-        Parent parent = FXMLLoader.load(this.getClass().getResource("/com/jamith/rmi/view/MainPanel.fxml"));
+        Parent parent = FXMLLoader.load(this.getClass().getResource("/com/jamith/rmi/view/Login.fxml"));
         Scene temp = new Scene(parent);
         primaryStage.setScene(temp);
         primaryStage.centerOnScreen();

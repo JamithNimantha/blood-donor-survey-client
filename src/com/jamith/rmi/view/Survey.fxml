@@ -88,8 +88,8 @@
                 <Font name="System Bold" size="13.0"/>
             </font>
         </Button>
-        <Button fx:id="btnHome" cancelButton="true" layoutX="489.0" layoutY="437.0" mnemonicParsing="false"
-                onAction="#btnHomeOnAction" prefHeight="32.0" prefWidth="134.0" styleClass="button-clear"
+        <Button fx:id="btnHome" cancelButton="true" layoutX="471.0" layoutY="437.0" mnemonicParsing="false"
+                onAction="#btnHomeOnAction" prefHeight="32.0" prefWidth="152.0" styleClass="button-clear"
                 stylesheets="@style.css" text="Back to Login">
             <font>
                 <Font name="System Bold" size="12.0"/>

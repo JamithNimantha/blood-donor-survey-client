@@ -78,7 +78,7 @@ public class MainPanelController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         try {
             userService = (UserService) ServiceHandler.getInstance().getService(ServiceFactory.ServiceType.USER);
-            boolean dsf = userService.logout("dsf");
+            loadHome();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -91,7 +91,12 @@ public class MainPanelController implements Initializable {
     }
 
     @FXML
-    void btnHomeOnAction(ActionEvent event) {
+    void btnHomeOnAction(ActionEvent event) throws IOException {
+        loadHome();
+    }
 
+    private void loadHome() throws IOException {
+        paneLoader = FXMLLoader.load(this.getClass().getResource("/com/jamith/rmi/view/Home.fxml"));
+        pane.getChildren().setAll(paneLoader);
     }
 }

@@ -9,20 +9,20 @@
     <children>
         <TableView fx:id="tblAnswer" layoutX="96.0" layoutY="169.0" prefHeight="154.0" prefWidth="498.0">
             <columns>
-                <TableColumn prefWidth="382.0" text="Answer"/>
-                <TableColumn minWidth="0.0" prefWidth="63.0" style="-fx-alignment: center;"/>
-                <TableColumn minWidth="0.0" prefWidth="52.0" style="-fx-alignment: center;"/>
+                <TableColumn prefWidth="350.0" text="Answer"/>
+                <TableColumn minWidth="0.0" prefWidth="73.0" style="-fx-alignment: center;"/>
+                <TableColumn minWidth="0.0" prefWidth="74.0" style="-fx-alignment: center;"/>
             </columns>
         </TableView>
         <TableView fx:id="tblQuestion" layoutX="11.0" layoutY="337.0" prefHeight="297.0" prefWidth="813.0">
             <columns>
                 <TableColumn prefWidth="65.0" text="ID"/>
                 <TableColumn prefWidth="519.0" text="Question"/>
-                <TableColumn style="-fx-alignment: center;"/>
-                <TableColumn prefWidth="75.0" style="-fx-alignment: center;"/>
+                <TableColumn prefWidth="115.0" style="-fx-alignment: center;"/>
+                <TableColumn prefWidth="113.0" style="-fx-alignment: center;"/>
             </columns>
         </TableView>
-        <Label layoutX="132.0" layoutY="39.0" prefHeight="32.0" prefWidth="391.0" text="Question And Answer Management">
+        <Label layoutX="195.0" layoutY="39.0" prefHeight="32.0" prefWidth="391.0" text="Question And Answer Management">
             <font>
                 <Font name="System Bold" size="23.0"/>
             </font>
@@ -34,10 +34,10 @@
         </Label>
         <TextField fx:id="txtQuestion" layoutX="96.0" layoutY="98.0" prefHeight="25.0" prefWidth="704.0"
                    stylesheets="@style.css"/>
-        <Button fx:id="btnClear" layoutX="638.0" layoutY="275.0" mnemonicParsing="false" onAction="#btnClearOnAction"
+        <Button fx:id="btnClear" layoutX="617.0" layoutY="275.0" mnemonicParsing="false" onAction="#btnClearOnAction"
                 prefHeight="29.0" prefWidth="73.0" styleClass="button-clear" stylesheets="@style.css" text="Clear"/>
-        <Button fx:id="btnSave" layoutX="729.0" layoutY="275.0" mnemonicParsing="false" onAction="#btnSaveOnAction"
-                prefHeight="29.0" prefWidth="73.0" styleClass="button-save" stylesheets="@style.css" text="Save"/>
+        <Button fx:id="btnSave" layoutX="708.0" layoutY="275.0" mnemonicParsing="false" onAction="#btnSaveOnAction"
+                prefHeight="32.0" prefWidth="110.0" styleClass="button-save" stylesheets="@style.css" text="Save"/>
         <Label layoutX="15.0" layoutY="169.0" prefHeight="31.0" prefWidth="73.0" text="Answers :">
             <font>
                 <Font name="System Bold" size="12.0"/>
@@ -50,9 +50,9 @@
         </Label>
         <TextField fx:id="txtAnswer" layoutX="96.0" layoutY="132.0" prefHeight="25.0" prefWidth="381.0"
                    stylesheets="@style.css"/>
-        <Button fx:id="btnAdd" layoutX="598.0" layoutY="128.0" mnemonicParsing="false" onAction="#btnAddOnAction"
+        <Button fx:id="btnAdd" layoutX="500.0" layoutY="130.0" mnemonicParsing="false" onAction="#btnAddOnAction"
                 prefHeight="0.0" prefWidth="59.0" styleClass="button-save" stylesheets="@style.css" text="Add"/>
-        <Button fx:id="btnAnswerClear" layoutX="666.0" layoutY="128.0" mnemonicParsing="false"
+        <Button fx:id="btnAnswerClear" layoutX="568.0" layoutY="130.0" mnemonicParsing="false"
                 onAction="#btnAnswerClearOnAction" prefHeight="25.0" prefWidth="59.0" styleClass="button-clear"
                 stylesheets="@style.css" text="Clear"/>
     </children>

@@ -54,7 +54,7 @@ public class SurveyController implements Initializable {
     private final List<ComboBox<String>> comboBoxList = new ArrayList<>();
     private UserService userService;
 
-    void setEmail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -66,6 +66,7 @@ public class SurveyController implements Initializable {
 
     @FXML
     void btnSubmitOnAction(ActionEvent event) {
+        System.out.println(this.email);
         List<ResponseDTO> responseDTOS = new ArrayList<>();
         UserDTO userDTO = new UserDTO();
         try {
@@ -132,6 +133,7 @@ public class SurveyController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        System.out.println(this.email);
         try {
             questionAnswerService = (QuestionAnswerService) ServiceHandler.getInstance().getService(ServiceFactory.ServiceType.QUESTIONANSWER);
             userService = (UserService) ServiceHandler.getInstance().getService(ServiceFactory.ServiceType.USER);

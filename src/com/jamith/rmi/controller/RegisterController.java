@@ -59,12 +59,13 @@ public class RegisterController implements Initializable {
             UserDTO dto = userService.findByEmail(email);
             if (dto == null) {
                 boolean b = userService.registerUser(userDTO);
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 if (b) {
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/Survey.fxml"));
                     Parent parent = fxmlLoader.load();
                     SurveyController surveyController = fxmlLoader.getController();
                     surveyController.setEmail(email);
+
                     Scene scene = new Scene(parent);
                     stage.setScene(scene);
                     stage.setResizable(false);
