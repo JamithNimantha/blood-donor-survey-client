@@ -8,7 +8,6 @@ import com.jamith.rmi.service.QuestionAnswerService;
 import com.jamith.rmi.service.ServiceFactory;
 import com.jamith.rmi.service.ServiceHandler;
 import com.jamith.rmi.util.Notification;
-import com.jamith.rmi.util.ViewLoader;
 import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,9 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -68,6 +65,11 @@ public class QuestionAnswerManagementController implements Initializable {
     private List<AnswerDTO> toBeDeletedAnswerDTOs = new ArrayList<>();
 
 
+    /**
+     * Add Answers to the Table
+     *
+     * @param event Action Event
+     */
     @FXML
     void btnAddOnAction(ActionEvent event) {
         if (!txtAnswer.getText().trim().isEmpty()) {
@@ -108,11 +110,21 @@ public class QuestionAnswerManagementController implements Initializable {
         }
     }
 
+    /**
+     * Clear the Fields
+     *
+     * @param event Action Event
+     */
     @FXML
     void btnClearOnAction(ActionEvent event) {
         clear();
     }
 
+    /**
+     * Save or Update Question and Answers
+     *
+     * @param event Action Event
+     */
     @FXML
     void btnSaveOnAction(ActionEvent event) {
         if (toBeUpdated == null) {
@@ -152,12 +164,6 @@ public class QuestionAnswerManagementController implements Initializable {
         }
     }
 
-    @FXML
-    void btnHomeOnAction(ActionEvent event) throws IOException {
-        Stage stage = (Stage) btnHome.getScene().getWindow();
-        ViewLoader.view(stage, this.getClass().getResource("/com/jamith/rmi/view/MainPanel.fxml"));
-    }
-
     /**
      * Called to initialize a controller after its root element has been
      * completely processed.
@@ -180,6 +186,9 @@ public class QuestionAnswerManagementController implements Initializable {
         btnSave.disableProperty().bind(txtQuestion.textProperty().isEmpty().or(Bindings.isEmpty(tblAnswer.getItems())));
     }
 
+    /**
+     * Load Questions to the Table
+     */
     private void loadQuestionTable() {
 
         tblQuestion.getItems().clear();
@@ -245,12 +254,20 @@ public class QuestionAnswerManagementController implements Initializable {
         }
     }
 
+    /**
+     * Clear Answer
+     *
+     * @param event Action Event
+     */
     @FXML
     void btnAnswerClearOnAction(ActionEvent event) {
         tblAnswer.getItems().clear();
         clearAnswer();
     }
 
+    /**
+     * Clear Answer
+     */
     private void clearAnswer() {
         if (toBeUpdated != null) {
             tblAnswer.getItems().clear();
@@ -261,6 +278,9 @@ public class QuestionAnswerManagementController implements Initializable {
         tblAnswer.setDisable(false);
     }
 
+    /**
+     * Clear All Fields
+     */
     private void clear() {
         clearFields();
         loadQuestionTable();
@@ -272,6 +292,9 @@ public class QuestionAnswerManagementController implements Initializable {
         btnSave.setText("Save");
     }
 
+    /**
+     * Clear Text Fields
+     */
     private void clearFields() {
         txtQuestion.clear();
         txtAnswer.clear();
@@ -279,6 +302,9 @@ public class QuestionAnswerManagementController implements Initializable {
 
     }
 
+    /**
+     * Load Answer Table
+     */
     private void loadAnswerTable() {
         tblAnswer.getItems().clear();
         tblAnswer.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("answer"));

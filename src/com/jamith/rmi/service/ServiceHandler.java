@@ -15,6 +15,9 @@ public class ServiceHandler implements ServiceFactory {
     private UserService userService;
     private QuestionAnswerService questionAnswerService;
 
+    /**
+     * looking for an object in the server object pool registered with a name and Get instance of the services
+     */
     private ServiceHandler() {
         try {
             serviceFactory = (ServiceFactory) Naming.lookup("rmi://localhost:6666/survey");
@@ -31,6 +34,10 @@ public class ServiceHandler implements ServiceFactory {
         }
     }
 
+    /**
+     * @return instance of the Service Factory Implementation
+     * @throws RemoteException
+     */
     public static ServiceHandler getInstance() {
         if (serviceHandler == null) {
             serviceHandler = new ServiceHandler();
@@ -38,6 +45,13 @@ public class ServiceHandler implements ServiceFactory {
         return serviceHandler;
     }
 
+    /**
+     * Get Service Implementation by Service Name
+     *
+     * @param serviceType Service Type
+     * @return Service Implementation
+     * @throws RemoteException
+     */
     @Override
     public SuperService getService(ServiceType serviceType) throws Exception {
         switch (serviceType) {

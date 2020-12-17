@@ -16,6 +16,13 @@ public class ViewLoader {
     private ViewLoader() {
     }
 
+    /**
+     * Load FXML Viewer
+     *
+     * @param stage    view Stage
+     * @param location Location of the view
+     * @throws IOException
+     */
     public static void view(Stage stage, URL location) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(location);
         Parent parent = fxmlLoader.load();

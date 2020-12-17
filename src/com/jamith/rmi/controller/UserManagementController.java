@@ -6,7 +6,6 @@ import com.jamith.rmi.service.ServiceFactory;
 import com.jamith.rmi.service.ServiceHandler;
 import com.jamith.rmi.service.UserService;
 import com.jamith.rmi.util.Notification;
-import com.jamith.rmi.util.ViewLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,7 +14,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -81,6 +79,9 @@ public class UserManagementController implements Initializable {
         }
     }
 
+    /**
+     * Load Users to the table
+     */
     private void loadUserTable() {
         tbl.getItems().clear();
         tbl.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -138,11 +139,19 @@ public class UserManagementController implements Initializable {
         }
     }
 
+    /**
+     * Clear Form
+     *
+     * @param event Action Event
+     */
     @FXML
     void btnClearOnAction(ActionEvent event) {
         clear();
     }
 
+    /**
+     * Clear All
+     */
     private void clear() {
         tbl.setDisable(false);
         loadUserTable();
@@ -152,6 +161,9 @@ public class UserManagementController implements Initializable {
         toBeUpdate = null;
     }
 
+    /**
+     * Clear Fiels
+     */
     private void clearFields() {
         txtMobile.clear();
         txtEmail.clear();
@@ -159,14 +171,13 @@ public class UserManagementController implements Initializable {
         txtPassword.clear();
     }
 
-    @FXML
-    void btnHomeOnAction(ActionEvent event) throws IOException {
-        ViewLoader.view(
-                (Stage) btnHome.getScene().getWindow(),
-                this.getClass().getResource("/com/jamith/rmi/view/MainPanel.fxml")
-        );
-    }
 
+    /**
+     * Save or Update USer
+     *
+     * @param event Action Event
+     * @throws IOException
+     */
     @FXML
     void btnSaveOnAction(ActionEvent event) throws IOException {
         if (toBeUpdate == null) {

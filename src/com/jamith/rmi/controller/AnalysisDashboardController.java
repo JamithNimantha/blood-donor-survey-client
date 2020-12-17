@@ -6,18 +6,13 @@ import com.jamith.rmi.service.ServiceFactory;
 import com.jamith.rmi.service.ServiceHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 
 import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -43,18 +38,9 @@ public class AnalysisDashboardController implements Initializable {
     private List<QuestionDTO> questionDTOList = new ArrayList<>();
 
 
-    @FXML
-    void btnHomeOnAction(ActionEvent event) throws IOException {
-        Stage stage = (Stage) btnHome.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/com/jamith/rmi/view/MainPanel.fxml"));
-        Parent parent = fxmlLoader.load();
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.show();
-    }
-
+    /**
+     * @param event Generate Report on Action
+     */
     @FXML
     void cmbOnAction(ActionEvent event) {
         int selectedIndex = cmbQuestion.getSelectionModel().getSelectedIndex();
@@ -70,6 +56,14 @@ public class AnalysisDashboardController implements Initializable {
         }
     }
 
+    /**
+     * Called to initialize a controller after its root element has been
+     * completely processed.
+     *
+     * @param location  The location used to resolve relative paths for the root object, or
+     *                  <tt>null</tt> if the location is not known.
+     * @param resources The resources used to localize the root object, or <tt>null</tt> if
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

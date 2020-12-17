@@ -44,12 +44,24 @@ public class MainPanelController implements Initializable {
 
     private AnchorPane paneLoader;
 
+    /**
+     * Load Analytical Pane
+     *
+     * @param event Action Event
+     * @throws IOException
+     */
     @FXML
     void btnAnalyticalOnAction(ActionEvent event) throws IOException {
         paneLoader = FXMLLoader.load(this.getClass().getResource("/com/jamith/rmi/view/AnalysisDashboard.fxml"));
         pane.getChildren().setAll(paneLoader);
     }
 
+    /**
+     * Logout from Application
+     *
+     * @param event Action Event
+     * @throws IOException
+     */
     @FXML
     void btnLogoutOnAction(ActionEvent event) throws IOException {
         boolean sample = userService.logout("sample");
@@ -60,6 +72,12 @@ public class MainPanelController implements Initializable {
         }
     }
 
+    /**
+     * Load User Management Pane
+     *
+     * @param event Action Event
+     * @throws IOException
+     */
     @FXML
     void btnUMOnAction(ActionEvent event) throws IOException {
         paneLoader = FXMLLoader.load(this.getClass().getResource("/com/jamith/rmi/view/UserManagement.fxml"));
@@ -84,17 +102,34 @@ public class MainPanelController implements Initializable {
         }
     }
 
+    /**
+     * Load Question And Answer Pane
+     *
+     * @param event Action Event
+     * @throws IOException
+     */
     @FXML
     void btnQAOnAction(ActionEvent event) throws IOException {
         paneLoader = FXMLLoader.load(this.getClass().getResource("/com/jamith/rmi/view/QuestionAnswerManagement.fxml"));
         pane.getChildren().setAll(paneLoader);
     }
 
+    /**
+     * Load Home
+     *
+     * @param event Action Event
+     * @throws IOException
+     */
     @FXML
     void btnHomeOnAction(ActionEvent event) throws IOException {
         loadHome();
     }
 
+    /**
+     * Load Home Pane
+     *
+     * @throws IOException
+     */
     private void loadHome() throws IOException {
         paneLoader = FXMLLoader.load(this.getClass().getResource("/com/jamith/rmi/view/Home.fxml"));
         pane.getChildren().setAll(paneLoader);

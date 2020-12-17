@@ -3,9 +3,6 @@ package com.jamith.rmi.dto;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,9 +11,6 @@ import java.util.stream.Collectors;
  * @author Jamith Nimantha
  */
 
-@Getter
-@Setter
-@ToString
 public class QuestionTableDTO {
 
     private Integer id;
@@ -57,4 +51,51 @@ public class QuestionTableDTO {
 
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public Button getBtnUpdate() {
+        return btnUpdate;
+    }
+
+    public void setBtnUpdate(Button btnUpdate) {
+        this.btnUpdate = btnUpdate;
+    }
+
+    public Button getBtnDelete() {
+        return btnDelete;
+    }
+
+    public void setBtnDelete(Button btnDelete) {
+        this.btnDelete = btnDelete;
+    }
+
+    public QuestionDTO getQuestionDTO() {
+        return questionDTO;
+    }
+
+    public void setQuestionDTO(QuestionDTO questionDTO) {
+        this.questionDTO = questionDTO;
+    }
+
+    public List<AnswerTableDTO> getAnswerTableDTOS() {
+        return answerTableDTOS;
+    }
+
+    public void setAnswerTableDTOS(List<AnswerTableDTO> answerTableDTOS) {
+        this.answerTableDTOS = answerTableDTOS;
+    }
 }

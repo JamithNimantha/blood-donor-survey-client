@@ -54,16 +54,30 @@ public class SurveyController implements Initializable {
     private final List<ComboBox<String>> comboBoxList = new ArrayList<>();
     private UserService userService;
 
+    /**
+     * Set User Email
+     *
+     * @param email user email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * @param event Load Home Pane
+     * @throws IOException
+     */
     @FXML
     void btnHomeOnAction(ActionEvent event) throws IOException {
         Stage stage = (Stage) btnHome.getScene().getWindow();
         ViewLoader.view(stage, this.getClass().getResource("/com/jamith/rmi/view/Login.fxml"));
     }
 
+    /**
+     * User Submit the Answers
+     *
+     * @param event Action Event
+     */
     @FXML
     void btnSubmitOnAction(ActionEvent event) {
         System.out.println(this.email);
@@ -118,6 +132,13 @@ public class SurveyController implements Initializable {
 
     }
 
+    /**
+     * Get the Answer DTO by the Question ID and Answer Name
+     *
+     * @param questionId Question ID
+     * @param name       Answer Name
+     * @return AnswerDTO
+     */
     private AnswerDTO getAnswerDTOByQuestionIdAndAnswerName(Integer questionId, String name) {
         for (QuestionDTO dto : allQuestions) {
             if (questionId.equals(dto.getId())) {
@@ -131,6 +152,14 @@ public class SurveyController implements Initializable {
         return null;
     }
 
+    /**
+     * Called to initialize a controller after its root element has been
+     * completely processed.
+     *
+     * @param location  The location used to resolve relative paths for the root object, or
+     *                  <tt>null</tt> if the location is not known.
+     * @param resources The resources used to localize the root object, or <tt>null</tt> if
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println(this.email);
@@ -143,6 +172,11 @@ public class SurveyController implements Initializable {
         }
     }
 
+    /**
+     * Get all the questions and Load to the pane
+     *
+     * @throws RemoteException
+     */
     private void getAllQuestions() throws RemoteException {
 
         allQuestions = questionAnswerService.getAllQuestions();

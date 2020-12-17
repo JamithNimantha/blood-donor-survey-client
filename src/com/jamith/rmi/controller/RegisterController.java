@@ -45,6 +45,11 @@ public class RegisterController implements Initializable {
 
     private UserService userService;
 
+    /**
+     * Register User for the Suervey
+     *
+     * @param event Action Event
+     */
     @FXML
     void btnRegisterOnAction(ActionEvent event) {
 
@@ -84,6 +89,10 @@ public class RegisterController implements Initializable {
         }
     }
 
+    /**
+     * @param event Load Login Pane
+     * @throws IOException
+     */
     @FXML
     void lblLoginOnMouseClicked(MouseEvent event) throws IOException {
         Stage stage = (Stage) lblLogin.getScene().getWindow();
@@ -91,6 +100,14 @@ public class RegisterController implements Initializable {
 
     }
 
+    /**
+     * Called to initialize a controller after its root element has been
+     * completely processed.
+     *
+     * @param location  The location used to resolve relative paths for the root object, or
+     *                  <tt>null</tt> if the location is not known.
+     * @param resources The resources used to localize the root object, or <tt>null</tt> if
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         validateRegistration();
@@ -101,6 +118,9 @@ public class RegisterController implements Initializable {
         }
     }
 
+    /**
+     * Validate text fields for Empty Values
+     */
     private void validateRegistration() {
         btnRegister.disableProperty()
                 .bind(txtFirstName.textProperty().isEmpty()

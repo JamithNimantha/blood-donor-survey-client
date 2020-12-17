@@ -37,12 +37,24 @@ public class LoginController implements Initializable {
     private Button btnStatSurvey;
 
 
+    /**
+     * Load Start Survey Pane
+     *
+     * @param event Action Event
+     * @throws IOException
+     */
     @FXML
     void btnStatSurveyOnAction(ActionEvent event) throws IOException {
         Stage stage = (Stage) btnStatSurvey.getScene().getWindow();
         ViewLoader.view(stage, this.getClass().getResource("/com/jamith/rmi/view/Register.fxml"));
     }
 
+    /**
+     * Admin Login
+     *
+     * @param event Action Event
+     * @throws IOException
+     */
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException {
         Stage stage = (Stage) btnLogin.getScene().getWindow();

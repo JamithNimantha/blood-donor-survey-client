@@ -13,6 +13,12 @@ public class AppPreLoader extends Preloader {
 
     private Stage stage;
 
+    /**
+     * Start the Application
+     *
+     * @param primaryStage Primary Stage
+     * @throws Exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
         this.stage = primaryStage;
