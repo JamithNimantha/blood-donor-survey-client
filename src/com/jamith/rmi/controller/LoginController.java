@@ -59,7 +59,7 @@ public class LoginController implements Initializable {
     void btnLoginOnAction(ActionEvent event) throws IOException {
         Stage stage = (Stage) btnLogin.getScene().getWindow();
         String session = userService.login(txtEmail.getText(), txtPassword.getText());
-        System.out.println("Generated Session : " + session);
+
         if (session != null) {
             ViewLoader.view(stage, this.getClass().getResource("/com/jamith/rmi/view/MainPanel.fxml"));
         } else {

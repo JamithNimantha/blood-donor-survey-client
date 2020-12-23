@@ -9,6 +9,8 @@ import java.util.List;
 
 public class QuestionDTO implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     private Integer id;
 
     private String type;

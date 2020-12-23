@@ -8,6 +8,8 @@ import java.util.Date;
  */
 public class ResponseDTO implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     private Integer id;
 
     private AnswerDTO answerDTO;
@@ -62,7 +64,6 @@ public class ResponseDTO implements Serializable {
 
     /**
      * Return Date of the Response
-     *
      * @return Date
      */
     public Date getDate() {

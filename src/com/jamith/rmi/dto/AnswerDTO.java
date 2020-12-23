@@ -8,6 +8,9 @@ import java.io.Serializable;
 
 public class AnswerDTO implements Serializable {
 
+
+    private static final long serialVersionUID = 1L;
+
     private Integer id;
 
     private String name;
@@ -40,7 +43,6 @@ public class AnswerDTO implements Serializable {
 
     /**
      * Set Answer Name
-     *
      * @param name Answer Name
      */
     public void setName(String name) {
@@ -56,7 +58,6 @@ public class AnswerDTO implements Serializable {
 
     /**
      * Set Question DTO
-     *
      * @param questionDTO
      */
     public void setQuestionDTO(QuestionDTO questionDTO) {

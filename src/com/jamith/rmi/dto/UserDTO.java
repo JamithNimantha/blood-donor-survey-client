@@ -25,7 +25,6 @@ public class UserDTO implements Serializable {
 
     /**
      * Set User Id
-     *
      * @param id User ID
      */
     public void setId(Integer id) {
@@ -41,7 +40,6 @@ public class UserDTO implements Serializable {
 
     /**
      * Set User Full Name
-     *
      * @param fullName User Full Name
      */
     public void setFullName(String fullName) {
@@ -57,7 +55,6 @@ public class UserDTO implements Serializable {
 
     /**
      * Set User Email
-     *
      * @param email User email
      */
     public void setEmail(String email) {
@@ -73,7 +70,6 @@ public class UserDTO implements Serializable {
 
     /**
      * Set User Mobile Number
-     *
      * @param mobile User Mobile Number
      */
     public void setMobile(String mobile) {
@@ -89,7 +85,6 @@ public class UserDTO implements Serializable {
 
     /**
      * Set User Type
-     *
      * @param type User Type
      */
     public void setType(String type) {
@@ -103,9 +98,7 @@ public class UserDTO implements Serializable {
         return password;
     }
 
-    /**
-     * Set User Password
-     *
+    /** Set User Password
      * @param password User Password
      */
     public void setPassword(String password) {
@@ -121,7 +114,6 @@ public class UserDTO implements Serializable {
 
     /**
      * Set Salt Value
-     *
      * @param salt Salt Value
      */
     public void setSalt(String salt) {

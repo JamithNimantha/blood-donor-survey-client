@@ -39,7 +39,9 @@ public class AnalysisDashboardController implements Initializable {
 
 
     /**
-     * @param event Generate Report on Action
+     * Generate Report on Action
+     *
+     * @param event ActionEvent
      */
     @FXML
     void cmbOnAction(ActionEvent event) {

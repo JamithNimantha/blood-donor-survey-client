@@ -14,7 +14,6 @@ public class AppPreLoader extends Preloader {
     private Stage stage;
 
     /**
-     * Start the Application
      *
      * @param primaryStage Primary Stage
      * @throws Exception
